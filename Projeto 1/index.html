@@ -5,19 +5,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Projeto 1</title>
     </head>
-    <body>
+    <body class="bg-white mx-82">
         <header class="flex flex-col items-center justify-center">
             <!-- Faixa azul -->
             <div
-                class="flex items-center justify-center bg-[#005CFF] w-screen h-7.5 text-white text-sm">
+                class="flex items-center justify-center bg-[#005CFF] w-screen h-7.5 text-white text-sm font-bold">
                 Ganhe &nbsp; <span class="bg-[#6220C1] px-1.5 rounded-sm">R$10,00</span> &nbsp; de
                 desconto no seu primeiro pedido. Utilize o cupom &nbsp;
-                <span class="italic">DESCONTO10 </span>
+                <span class="italic font-light">DESCONTO10 </span>
             </div>
 
             <!-- Faixa branca -->
             <div
-                class="flex flex-col gap-6 items-center justify-center w-screen h-29.5 shadow-[0_0_8px_rgba(0,0,0,0.16)] px-82.5">
+                class="flex flex-col gap-6 items-center justify-center w-screen h-29.5 shadow-[0_0_8px_rgba(0,0,0,0.16)] px-82.5 z-50">
                 <div class="flex items-center justify-between w-full">
                     <!-- Logo -->
                     <img src="/src/assets/logo-avanti.png" alt="" />
@@ -41,22 +41,47 @@
                 <!-- Categorias -->
                 <div class="flex items-center justify-between w-full">
                     <!-- Menu hamburguer -->
-                    <div>
+                    <div class="flex flex-row gap-2">
                         <img src="/src/assets/hamburger.svg" alt="" />
                         <div>Todas as categorias</div>
                     </div>
                     <!-- Categorias -->
-                    <div>Departamento</div>
-                    <div>Departamento</div>
-                    <div>Departamento</div>
-                    <div>Departamento</div>
-                    <div>Departamento</div>
-                    <div>Departamento</div>
-                    <div>Departamento</div>
-                    <div>Departamento</div>
+                    <a href="#" class="hover:text-[#005CFF] hover:scale-108">Departamento</a>
+                    <a href="#" class="hover:text-[#005CFF] hover:scale-108">Departamento</a>
+                    <a href="#" class="hover:text-[#005CFF] hover:scale-108">Departamento</a>
+                    <a href="#" class="hover:text-[#005CFF] hover:scale-108">Departamento</a>
+                    <a href="#" class="hover:text-[#005CFF] hover:scale-108">Departamento</a>
+                    <a href="#" class="hover:text-[#005CFF] hover:scale-108">Departamento</a>
+                    <a href="#" class="hover:text-[#005CFF] hover:scale-108">Departamento</a>
+                    <a href="#" class="hover:text-[#005CFF] hover:scale-108">Departamento</a>
                 </div>
             </div>
         </header>
+
+        <!-- Banner -->
+        <div class="bg-[#E7E7EA] absolute left-0 w-screen h-[510px] flex items-center justify-center overflow-hidden">
+            <!-- Imagem -->
+            <img src="/src/assets/cadeira.jpeg" alt="Cadeira com roupas empilhadas" class="w-1/3 -translate-y-26"/>
+            <!-- Texto -->
+            <div class="flex items-center justify-center flex-col gap-8">
+                <h1 class="text-8xl">
+                    <span class="font-bold">SUPER</span><span class="font-light">SALE</span>
+                </h1>
+                <p class="text-2xl font-bold text-[#005CFF] tracking-[0.3em]">
+                    ITENS SELECIONADOS COM ATÉ
+                </p>
+                <p class="text-6xl font-bold text-[#005CFF]">50%OFF</p>
+            </div>
+        </div>
+
+        <!-- Carrosel -->
+         <div class="flex items-center justify-center">
+            <!-- Lançamentos + ver mais -->
+            <div class="flex justify-between w-full mt-155">
+                <p class="font-bold text-xl">Lançamentos</p>
+                <a href="#" class="hover:text-[#005CFF] font-bold text-sm">Ver mais</a>
+            </div>
+         </div>
 
         <script type="module" src="/src/main.js"></script>
     </body>
