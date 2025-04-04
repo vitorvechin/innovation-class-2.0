@@ -30,7 +30,7 @@ Desenvolver um layout proposto no Figma utilizando **HTML, CSS e JavaScript**.
         **"Você buscou por: 'assunto buscado'"**.
 -   Criar interação dos carrosséis (com biblioteca JS, se necessário).
 
-📂 [Acesse a pasta do Projeto 1](https://github.com/vitorvechin/Innovation-Class/tree/master/Projeto%201)
+📂 [Acesse a pasta do Projeto 1](https://github.com/vitorvechin/innovation-class-2.0/tree/master/Projeto%201)
 
 ---
 
@@ -53,4 +53,4 @@ Criar uma aplicação **React** para buscar perfis no GitHub e exibir informaç�
 -   Estilizar seguindo o design do Figma.
 -   (Opcional) Adicionar animações e loading para melhor UX.
 
-📂 [Acesse a pasta do Projeto 2](https://github.com/vitorvechin/Innovation-Class/tree/master/Projeto%202)
+📂 [Acesse a pasta do Projeto 2](https://github.com/vitorvechin/innovation-class-2.0/tree/master/Projeto%202)
