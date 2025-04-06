@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Projeto 1</title>
     </head>
-    <body class="bg-white mx-82">
-        <header class="flex flex-col items-center justify-center">
+    <body class="bg-white px-82">
+        <header class="flex flex-col items-center justify-center sticky top-0 z-100">
             <!-- Faixa azul -->
             <div
                 class="flex items-center justify-center bg-[#005CFF] w-screen h-7.5 text-white text-sm font-bold">
@@ -17,13 +17,13 @@
 
             <!-- Faixa branca -->
             <div
-                class="flex flex-col gap-6 items-center justify-center w-screen h-29.5 shadow-[0_0_8px_rgba(0,0,0,0.16)] px-82.5 z-50">
+                class="flex flex-col gap-6 items-center justify-center w-screen h-29.5 shadow-[0_0_8px_rgba(0,0,0,0.16)] px-82.5 z-50 bg-white">
                 <div class="flex items-center justify-between w-full">
                     <!-- Logo -->
                     <img src="/src/assets/logo-avanti.png" alt="" />
                     <!-- Searchbar -->
                     <div
-                        class="flex items-center justify-center w-[594px] h-10 border rounded-[10px] px-6">
+                        class="flex items-center justify-center w-[594px] h-10 border border-[#DDDDDD] rounded-[10px] px-6">
                         <input
                             class="w-full focus:outline-none"
                             type="text"
@@ -59,9 +59,13 @@
         </header>
 
         <!-- Banner -->
-        <div class="bg-[#E7E7EA] absolute left-0 w-screen h-[510px] flex items-center justify-center overflow-hidden">
+        <section
+            class="bg-[#E7E7EA] absolute left-0 w-screen h-[510px] flex items-center justify-center overflow-hidden">
             <!-- Imagem -->
-            <img src="/src/assets/cadeira.jpeg" alt="Cadeira com roupas empilhadas" class="w-1/3 -translate-y-26"/>
+            <img
+                src="/src/assets/cadeira.jpeg"
+                alt="Cadeira com roupas empilhadas"
+                class="w-1/3 -translate-y-26" />
             <!-- Texto -->
             <div class="flex items-center justify-center flex-col gap-8">
                 <h1 class="text-8xl">
@@ -72,16 +76,71 @@
                 </p>
                 <p class="text-6xl font-bold text-[#005CFF]">50%OFF</p>
             </div>
-        </div>
+        </section>
+
+        <!-- Template do card -->
+        <template id="product-card">
+            <div
+                class="flex flex-col items-center justify-center max-w-[238px] max-h-[409px] p-4 rounded-[10px] border border-[#DDDDDD]">
+                <img src="" alt="Imagem do produto" class="product-img" />
+                <h3 class="self-start mt-2 text-ms product-title"></h3>
+                <div class="flex self-start items-center gap-2 mt-1">
+                    <div>
+                        <p
+                            class="self-start line-through text-xs text-[#303030] product-original-price"></p>
+                        <p class="self-start font-bold text-base product-price"></p>
+                    </div>
+                    <p
+                        class="bg-[#5EC0BE] text-white px-2 py-1 m-auto rounded-[4px] text-xs underline product-discount"></p>
+                </div>
+                <p class="self-start text-[12px] mt-1">
+                    Ou em até <span class="font-bold product-installment"></span>
+                </p>
+                <button
+                    class="bg-[#005CFF] hover:bg-[#0026ff] text-white w-full h-10 rounded-[10px] mt-4 font-bold px-6 py-2.5">
+                    Comprar
+                </button>
+            </div>
+        </template>
 
         <!-- Carrosel -->
-         <div class="flex items-center justify-center">
+        <section class="flex items-center justify-center mt-155 flex-col gap-4">
             <!-- Lançamentos + ver mais -->
-            <div class="flex justify-between w-full mt-155">
+            <div class="flex justify-between w-full">
                 <p class="font-bold text-xl">Lançamentos</p>
                 <a href="#" class="hover:text-[#005CFF] font-bold text-sm">Ver mais</a>
             </div>
-         </div>
+
+            <!-- Imagens -->
+            <div id="product-carousel" class="flex w-full justify-between flex-wrap gap-4"></div>
+        </section>
+
+        <!-- Foto caneca -->
+        <div class="flex mt-30 gap-8 items-center">
+            <div class="bg-[#C2C2C2] w-[650px] shrink-0 h-[747px] flex items-center justify-center">
+                <img src="/src/assets/caneca.png" alt="" />
+            </div>
+            <div class="flex flex-col justify-center text-left w-[530px]">
+                <h1 class="text-3xl font-bold">LOREM IPSUM</h1>
+                <p class="text-lg mt-6">
+                    Duis consectetur metus nec lacus auctor dignissim. Mauris vitae finibus dui.
+                    Mauris laoreet lacus ut eleifend viverra. Cras efficitur volutpat dui, in
+                    lobortis metus lacinia sit amet. Sed lacinia pharetra magna, vel pulvinar ligula
+                    hendrerit a. Maecenas fringilla porttitor tortor eget lacinia. Donec
+                    sollicitudin euismod orci, auctor fringilla magna consequat interdum. Fusce
+                    sagittis elit a libero commodo egestas efficitur id augue.
+                </p>
+                <br />
+                <p class="text-lg mt-5">
+                    Duis consectetur metus nec lacus auctor dignissim. Mauris vitae finibus dui.
+                    Mauris laoreet lacus ut eleifend viverra. Cras efficitur volutpat dui, in
+                    lobortis metus lacinia sit amet. Sed lacinia pharetra magna, vel pulvinar ligula
+                    hendrerit a. Maecenas fringilla porttitor tortor eget lacinia. Donec
+                    sollicitudin euismod orci, auctor fringilla magna consequat interdum. Fusce
+                    sagittis elit a libero commodo egestas efficitur id augue.
+                </p>
+            </div>
+        </div>
 
         <script type="module" src="/src/main.js"></script>
     </body>
