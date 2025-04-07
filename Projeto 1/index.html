@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Projeto 1</title>
     </head>
-    <body class="bg-white px-82">
+    <body class="bg-white">
         <header class="flex flex-col items-center justify-center sticky top-0 z-100">
             <!-- Faixa azul -->
             <div
@@ -17,7 +17,7 @@
 
             <!-- Faixa branca -->
             <div
-                class="flex flex-col gap-6 items-center justify-center w-screen h-29.5 shadow-[0_0_8px_rgba(0,0,0,0.16)] px-82.5 z-50 bg-white">
+                class="flex flex-col gap-6 items-center justify-center w-screen h-29.5 shadow-[0_0_8px_rgba(0,0,0,0.16)] z-50 bg-white px-82">
                 <div class="flex items-center justify-between w-full">
                     <!-- Logo -->
                     <img src="/src/assets/logo-avanti.png" alt="" />
@@ -60,7 +60,7 @@
 
         <!-- Banner -->
         <section
-            class="bg-[#E7E7EA] absolute left-0 w-screen h-[510px] flex items-center justify-center overflow-hidden">
+            class="bg-[#E7E7EA] w-screen h-[510px] flex items-center justify-center overflow-hidden">
             <!-- Imagem -->
             <img
                 src="/src/assets/cadeira.jpeg"
@@ -104,7 +104,7 @@
         </template>
 
         <!-- Carrosel -->
-        <section class="flex items-center justify-center mt-155 flex-col gap-4">
+        <section class="flex items-center justify-center mt-25 flex-col gap-4 px-82">
             <!-- Lançamentos + ver mais -->
             <div class="flex justify-between w-full">
                 <p class="font-bold text-xl">Lançamentos</p>
@@ -112,14 +112,176 @@
             </div>
 
             <!-- Imagens -->
-            <div id="product-carousel" class="flex w-full justify-between flex-wrap gap-4"></div>
+            <div class="flex justify-between w-full">
+                <div
+                    class="flex flex-col items-center justify-center max-w-[238px] max-h-[409px] p-4 rounded-[10px] border border-[#DDDDDD]">
+                    <img
+                        src="src/assets/foto-carrossel.png"
+                        alt="Imagem do produto"
+                        class="product-img" />
+                    <h3 class="self-start mt-2 text-ms product-title">
+                        Lorem ipsum dolor sit amet consectetuer adipiscing elit
+                    </h3>
+                    <div class="flex self-start items-center gap-2 mt-1">
+                        <div>
+                            <p
+                                class="self-start line-through text-xs text-[#303030] product-original-price">
+                                R$100,00
+                            </p>
+                            <p class="self-start font-bold text-base product-price">R$79,90</p>
+                        </div>
+                        <p
+                            class="bg-[#5EC0BE] text-white px-2 py-1 m-auto rounded-[4px] text-xs underline product-discount">
+                            10%OFF
+                        </p>
+                    </div>
+                    <p class="self-start text-[12px] mt-1">
+                        Ou em até
+                        <span class="font-bold product-installment">10x de R$7,90</span>
+                    </p>
+                    <button
+                        class="bg-[#005CFF] hover:bg-[#0026ff] text-white w-full h-10 rounded-[10px] mt-4 font-bold px-6 py-2.5">
+                        Comprar
+                    </button>
+                </div>
+
+                <div
+                    class="flex flex-col items-center justify-center max-w-[238px] max-h-[409px] p-4 rounded-[10px] border border-[#DDDDDD]">
+                    <img
+                        src="src/assets/foto-carrossel.png"
+                        alt="Imagem do produto"
+                        class="product-img" />
+                    <h3 class="self-start mt-2 text-ms product-title">
+                        Lorem ipsum dolor sit amet consectetuer adipiscing elit
+                    </h3>
+                    <div class="flex self-start items-center gap-2 mt-1">
+                        <div>
+                            <p
+                                class="self-start line-through text-xs text-[#303030] product-original-price">
+                                R$100,00
+                            </p>
+                            <p class="self-start font-bold text-base product-price">R$79,90</p>
+                        </div>
+                        <p
+                            class="bg-[#5EC0BE] text-white px-2 py-1 m-auto rounded-[4px] text-xs underline product-discount">
+                            10%OFF
+                        </p>
+                    </div>
+                    <p class="self-start text-[12px] mt-1">
+                        Ou em até
+                        <span class="font-bold product-installment">10x de R$7,90</span>
+                    </p>
+                    <button
+                        class="bg-[#005CFF] hover:bg-[#0026ff] text-white w-full h-10 rounded-[10px] mt-4 font-bold px-6 py-2.5">
+                        Comprar
+                    </button>
+                </div>
+
+                <div
+                    class="flex flex-col items-center justify-center max-w-[238px] max-h-[409px] p-4 rounded-[10px] border border-[#DDDDDD]">
+                    <img
+                        src="src/assets/foto-carrossel.png"
+                        alt="Imagem do produto"
+                        class="product-img" />
+                    <h3 class="self-start mt-2 text-ms product-title">
+                        Lorem ipsum dolor sit amet consectetuer adipiscing elit
+                    </h3>
+                    <div class="flex self-start items-center gap-2 mt-1">
+                        <div>
+                            <p
+                                class="self-start line-through text-xs text-[#303030] product-original-price">
+                                R$100,00
+                            </p>
+                            <p class="self-start font-bold text-base product-price">R$79,90</p>
+                        </div>
+                        <p
+                            class="bg-[#5EC0BE] text-white px-2 py-1 m-auto rounded-[4px] text-xs underline product-discount">
+                            10%OFF
+                        </p>
+                    </div>
+                    <p class="self-start text-[12px] mt-1">
+                        Ou em até
+                        <span class="font-bold product-installment">10x de R$7,90</span>
+                    </p>
+                    <button
+                        class="bg-[#005CFF] hover:bg-[#0026ff] text-white w-full h-10 rounded-[10px] mt-4 font-bold px-6 py-2.5">
+                        Comprar
+                    </button>
+                </div>
+
+                <div
+                    class="flex flex-col items-center justify-center max-w-[238px] max-h-[409px] p-4 rounded-[10px] border border-[#DDDDDD]">
+                    <img
+                        src="src/assets/foto-carrossel.png"
+                        alt="Imagem do produto"
+                        class="product-img" />
+                    <h3 class="self-start mt-2 text-ms product-title">
+                        Lorem ipsum dolor sit amet consectetuer adipiscing elit
+                    </h3>
+                    <div class="flex self-start items-center gap-2 mt-1">
+                        <div>
+                            <p
+                                class="self-start line-through text-xs text-[#303030] product-original-price">
+                                R$100,00
+                            </p>
+                            <p class="self-start font-bold text-base product-price">R$79,90</p>
+                        </div>
+                        <p
+                            class="bg-[#5EC0BE] text-white px-2 py-1 m-auto rounded-[4px] text-xs underline product-discount">
+                            10%OFF
+                        </p>
+                    </div>
+                    <p class="self-start text-[12px] mt-1">
+                        Ou em até
+                        <span class="font-bold product-installment">10x de R$7,90</span>
+                    </p>
+                    <button
+                        class="bg-[#005CFF] hover:bg-[#0026ff] text-white w-full h-10 rounded-[10px] mt-4 font-bold px-6 py-2.5">
+                        Comprar
+                    </button>
+                </div>
+
+                <div
+                    class="flex flex-col items-center justify-center max-w-[238px] max-h-[409px] p-4 rounded-[10px] border border-[#DDDDDD]">
+                    <img
+                        src="src/assets/foto-carrossel.png"
+                        alt="Imagem do produto"
+                        class="product-img" />
+                    <h3 class="self-start mt-2 text-ms product-title">
+                        Lorem ipsum dolor sit amet consectetuer adipiscing elit
+                    </h3>
+                    <div class="flex self-start items-center gap-2 mt-1">
+                        <div>
+                            <p
+                                class="self-start line-through text-xs text-[#303030] product-original-price">
+                                R$100,00
+                            </p>
+                            <p class="self-start font-bold text-base product-price">R$79,90</p>
+                        </div>
+                        <p
+                            class="bg-[#5EC0BE] text-white px-2 py-1 m-auto rounded-[4px] text-xs underline product-discount">
+                            10%OFF
+                        </p>
+                    </div>
+                    <p class="self-start text-[12px] mt-1">
+                        Ou em até
+                        <span class="font-bold product-installment">10x de R$7,90</span>
+                    </p>
+                    <button
+                        class="bg-[#005CFF] hover:bg-[#0026ff] text-white w-full h-10 rounded-[10px] mt-4 font-bold px-6 py-2.5">
+                        Comprar
+                    </button>
+                </div>
+            </div>
         </section>
 
         <!-- Foto caneca -->
-        <div class="flex mt-30 gap-8 items-center">
+        <section class="flex mt-30 gap-8 items-center justify-between px-82">
+            <!-- Lado imagem -->
             <div class="bg-[#C2C2C2] w-[650px] shrink-0 h-[747px] flex items-center justify-center">
                 <img src="/src/assets/caneca.png" alt="" />
             </div>
+            <!-- Lado texto -->
             <div class="flex flex-col justify-center text-left w-[530px]">
                 <h1 class="text-3xl font-bold">LOREM IPSUM</h1>
                 <p class="text-lg mt-6">
@@ -140,7 +302,286 @@
                     sagittis elit a libero commodo egestas efficitur id augue.
                 </p>
             </div>
-        </div>
+        </section>
+
+        <!-- Foto caneca 2 -->
+        <section class="bg-[#DEDEDE] px-82 py-11 flex items-center justify-between mt-30 gap-20">
+            <!-- Lado texto -->
+            <div class="flex flex-col gap-16 items-center justify-center">
+                <h1 class="text-3xl font-bold text-[#4F4F4F]">LOREM IMPSUM</h1>
+
+                <div class="flex gap-5">
+                    <img src="src/assets/Circulo e Icone.svg" alt="" class="w-24" />
+                    <p class="text-lg text-[#4F4F4F] w-[360px]">
+                        Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
+                        nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu,
+                        pretium quis, sem.
+                    </p>
+                </div>
+                <div class="flex gap-5">
+                    <img src="src/assets/Circulo e Icone.svg" alt="" class="w-24" />
+                    <p class="text-lg text-[#4F4F4F] w-[360px]">
+                        Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
+                        nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu,
+                        pretium quis, sem.
+                    </p>
+                </div>
+                <div class="flex gap-5">
+                    <img src="src/assets/Circulo e Icone.svg" alt="" class="w-24" />
+                    <p class="text-lg text-[#4F4F4F] w-[360px]">
+                        Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
+                        nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu,
+                        pretium quis, sem.
+                    </p>
+                </div>
+            </div>
+            <!-- Lado imagem -->
+            <img src="src/assets/caneca2.png" alt="" class="w-[652px] h-[728px] object-cover" />
+        </section>
+
+        <!-- Foto caneca -->
+        <section class="flex mt-30 gap-8 items-center justify-between px-82">
+            <!-- Lado imagem -->
+            <div class="bg-[#C2C2C2] w-[650px] shrink-0 h-[747px] flex items-center justify-center">
+                <img src="/src/assets/caneca.png" alt="" />
+            </div>
+            <!-- Lado texto -->
+            <div class="flex flex-col justify-center text-left w-[530px]">
+                <h1 class="text-3xl font-bold">LOREM IPSUM</h1>
+                <p class="text-lg mt-6">
+                    Duis consectetur metus nec lacus auctor dignissim. Mauris vitae finibus dui.
+                    Mauris laoreet lacus ut eleifend viverra. Cras efficitur volutpat dui, in
+                    lobortis metus lacinia sit amet. Sed lacinia pharetra magna, vel pulvinar ligula
+                    hendrerit a. Maecenas fringilla porttitor tortor eget lacinia. Donec
+                    sollicitudin euismod orci, auctor fringilla magna consequat interdum. Fusce
+                    sagittis elit a libero commodo egestas efficitur id augue.
+                </p>
+                <br />
+                <p class="text-lg mt-5">
+                    Duis consectetur metus nec lacus auctor dignissim. Mauris vitae finibus dui.
+                    Mauris laoreet lacus ut eleifend viverra. Cras efficitur volutpat dui, in
+                    lobortis metus lacinia sit amet. Sed lacinia pharetra magna, vel pulvinar ligula
+                    hendrerit a. Maecenas fringilla porttitor tortor eget lacinia. Donec
+                    sollicitudin euismod orci, auctor fringilla magna consequat interdum. Fusce
+                    sagittis elit a libero commodo egestas efficitur id augue.
+                </p>
+            </div>
+        </section>
+
+        <!-- Carrosel -->
+        <section class="flex items-center justify-center mt-25 flex-col gap-4 px-82">
+            <!-- Lançamentos + ver mais -->
+            <div class="flex justify-between w-full">
+                <p class="font-bold text-xl">Lançamentos</p>
+                <a href="#" class="hover:text-[#005CFF] font-bold text-sm">Ver mais</a>
+            </div>
+
+            <!-- Imagens -->
+            <div class="flex justify-between w-full">
+                <div
+                    class="flex flex-col items-center justify-center max-w-[238px] max-h-[409px] p-4 rounded-[10px] border border-[#DDDDDD]">
+                    <img
+                        src="src/assets/foto-carrossel.png"
+                        alt="Imagem do produto"
+                        class="product-img" />
+                    <h3 class="self-start mt-2 text-ms product-title">
+                        Lorem ipsum dolor sit amet consectetuer adipiscing elit
+                    </h3>
+                    <div class="flex self-start items-center gap-2 mt-1">
+                        <div>
+                            <p
+                                class="self-start line-through text-xs text-[#303030] product-original-price">
+                                R$100,00
+                            </p>
+                            <p class="self-start font-bold text-base product-price">R$79,90</p>
+                        </div>
+                        <p
+                            class="bg-[#5EC0BE] text-white px-2 py-1 m-auto rounded-[4px] text-xs underline product-discount">
+                            10%OFF
+                        </p>
+                    </div>
+                    <p class="self-start text-[12px] mt-1">
+                        Ou em até
+                        <span class="font-bold product-installment">10x de R$7,90</span>
+                    </p>
+                    <button
+                        class="bg-[#005CFF] hover:bg-[#0026ff] text-white w-full h-10 rounded-[10px] mt-4 font-bold px-6 py-2.5">
+                        Comprar
+                    </button>
+                </div>
+
+                <div
+                    class="flex flex-col items-center justify-center max-w-[238px] max-h-[409px] p-4 rounded-[10px] border border-[#DDDDDD]">
+                    <img
+                        src="src/assets/foto-carrossel.png"
+                        alt="Imagem do produto"
+                        class="product-img" />
+                    <h3 class="self-start mt-2 text-ms product-title">
+                        Lorem ipsum dolor sit amet consectetuer adipiscing elit
+                    </h3>
+                    <div class="flex self-start items-center gap-2 mt-1">
+                        <div>
+                            <p
+                                class="self-start line-through text-xs text-[#303030] product-original-price">
+                                R$100,00
+                            </p>
+                            <p class="self-start font-bold text-base product-price">R$79,90</p>
+                        </div>
+                        <p
+                            class="bg-[#5EC0BE] text-white px-2 py-1 m-auto rounded-[4px] text-xs underline product-discount">
+                            10%OFF
+                        </p>
+                    </div>
+                    <p class="self-start text-[12px] mt-1">
+                        Ou em até
+                        <span class="font-bold product-installment">10x de R$7,90</span>
+                    </p>
+                    <button
+                        class="bg-[#005CFF] hover:bg-[#0026ff] text-white w-full h-10 rounded-[10px] mt-4 font-bold px-6 py-2.5">
+                        Comprar
+                    </button>
+                </div>
+
+                <div
+                    class="flex flex-col items-center justify-center max-w-[238px] max-h-[409px] p-4 rounded-[10px] border border-[#DDDDDD]">
+                    <img
+                        src="src/assets/foto-carrossel.png"
+                        alt="Imagem do produto"
+                        class="product-img" />
+                    <h3 class="self-start mt-2 text-ms product-title">
+                        Lorem ipsum dolor sit amet consectetuer adipiscing elit
+                    </h3>
+                    <div class="flex self-start items-center gap-2 mt-1">
+                        <div>
+                            <p
+                                class="self-start line-through text-xs text-[#303030] product-original-price">
+                                R$100,00
+                            </p>
+                            <p class="self-start font-bold text-base product-price">R$79,90</p>
+                        </div>
+                        <p
+                            class="bg-[#5EC0BE] text-white px-2 py-1 m-auto rounded-[4px] text-xs underline product-discount">
+                            10%OFF
+                        </p>
+                    </div>
+                    <p class="self-start text-[12px] mt-1">
+                        Ou em até
+                        <span class="font-bold product-installment">10x de R$7,90</span>
+                    </p>
+                    <button
+                        class="bg-[#005CFF] hover:bg-[#0026ff] text-white w-full h-10 rounded-[10px] mt-4 font-bold px-6 py-2.5">
+                        Comprar
+                    </button>
+                </div>
+
+                <div
+                    class="flex flex-col items-center justify-center max-w-[238px] max-h-[409px] p-4 rounded-[10px] border border-[#DDDDDD]">
+                    <img
+                        src="src/assets/foto-carrossel.png"
+                        alt="Imagem do produto"
+                        class="product-img" />
+                    <h3 class="self-start mt-2 text-ms product-title">
+                        Lorem ipsum dolor sit amet consectetuer adipiscing elit
+                    </h3>
+                    <div class="flex self-start items-center gap-2 mt-1">
+                        <div>
+                            <p
+                                class="self-start line-through text-xs text-[#303030] product-original-price">
+                                R$100,00
+                            </p>
+                            <p class="self-start font-bold text-base product-price">R$79,90</p>
+                        </div>
+                        <p
+                            class="bg-[#5EC0BE] text-white px-2 py-1 m-auto rounded-[4px] text-xs underline product-discount">
+                            10%OFF
+                        </p>
+                    </div>
+                    <p class="self-start text-[12px] mt-1">
+                        Ou em até
+                        <span class="font-bold product-installment">10x de R$7,90</span>
+                    </p>
+                    <button
+                        class="bg-[#005CFF] hover:bg-[#0026ff] text-white w-full h-10 rounded-[10px] mt-4 font-bold px-6 py-2.5">
+                        Comprar
+                    </button>
+                </div>
+
+                <div
+                    class="flex flex-col items-center justify-center max-w-[238px] max-h-[409px] p-4 rounded-[10px] border border-[#DDDDDD]">
+                    <img
+                        src="src/assets/foto-carrossel.png"
+                        alt="Imagem do produto"
+                        class="product-img" />
+                    <h3 class="self-start mt-2 text-ms product-title">
+                        Lorem ipsum dolor sit amet consectetuer adipiscing elit
+                    </h3>
+                    <div class="flex self-start items-center gap-2 mt-1">
+                        <div>
+                            <p
+                                class="self-start line-through text-xs text-[#303030] product-original-price">
+                                R$100,00
+                            </p>
+                            <p class="self-start font-bold text-base product-price">R$79,90</p>
+                        </div>
+                        <p
+                            class="bg-[#5EC0BE] text-white px-2 py-1 m-auto rounded-[4px] text-xs underline product-discount">
+                            10%OFF
+                        </p>
+                    </div>
+                    <p class="self-start text-[12px] mt-1">
+                        Ou em até
+                        <span class="font-bold product-installment">10x de R$7,90</span>
+                    </p>
+                    <button
+                        class="bg-[#005CFF] hover:bg-[#0026ff] text-white w-full h-10 rounded-[10px] mt-4 font-bold px-6 py-2.5">
+                        Comprar
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Banner 2 -->]
+        <section
+            class="w-screen h-[660px] bg-[url('/src/assets/imagem-banner.png')] bg-cover bg-center flex items-center justify-center mt-25">
+            <div
+                class="w-screen h-[132px] bg-[#005CFF] flex items-center justify-center text-white">
+                <p class="text-3xl">
+                    Entre em contato conosco e verifique a disponibilidade para sua região!
+                </p>
+            </div>
+        </section>
+        \
+
+        <!-- Newsletter -->
+        <section class="flex flex-col items-center justify-center gap-10 mt-12">
+            <p class="text-xl font-bold">
+                Cadastre-se na nossa <span class="text-[#005CFF]">newsletter</span>
+            </p>
+            <div
+                class="flex items-center justify-center bg-[#DEDEDE] w-[1260px] h-[176px] rounded-lg gap-6">
+                <input
+                    type="text"
+                    placeholder="Digite seu nome"
+                    class="w-70 h-12 rounded-lg px-4 bg-white placeholder-[#303030] placeholder:sm" />
+                <input
+                    type="email"
+                    placeholder="Digite seu e-mail"
+                    class="w-70 h-12 rounded-lg px-4 bg-white placeholder-[#303030] placeholder:sm" />
+
+                <div class="flex items-center justify-center gap-2">
+                    <input type="checkbox" id="terms" class="rounded-sm" />
+                    <label for="terms" class="text-xs text-[#656565]">
+                        Estou de acordo com a
+                        <a href="#" class="underline">Política de Privacidade</a>
+                    </label>
+                </div>
+
+                <input
+                    type="submit"
+                    value="Cadastrar"
+                    class="text-base font-bold bg-[#005CFF] text-white rounded-lg px-6 py-3.5 cursor-pointer" />
+            </div>
+        </section>
 
         <script type="module" src="/src/main.js"></script>
     </body>
