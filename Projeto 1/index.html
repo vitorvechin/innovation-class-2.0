@@ -17,43 +17,111 @@
 
             <!-- Faixa branca -->
             <div
-                class="flex flex-col gap-6 items-center justify-center w-screen h-29.5 shadow-[0_0_8px_rgba(0,0,0,0.16)] z-50 bg-white px-82">
-                <div class="flex items-center justify-between w-full">
+                class="flex flex-col gap-6 items-center justify-center w-screen h-29.5 shadow-[0_0_8px_rgba(0,0,0,0.16)] z-50 bg-white px-82 relative">
+                <div class="flex justify-between items-center w-full">
                     <!-- Logo -->
-                    <img src="/src/assets/logo-avanti.png" alt="" />
+                    <img src="/src/assets/logo-avanti.png" alt="" class="h-7" />
+
                     <!-- Searchbar -->
                     <div
                         class="flex items-center justify-center w-[594px] h-10 border border-[#DDDDDD] rounded-[10px] px-6">
                         <input
-                            class="w-full focus:outline-none"
+                            class="w-full focus:outline-none placeholder:text-sm placeholder:font-semibold placeholder:text-black"
                             type="text"
                             placeholder="Digite aqui o que você procura" />
                         <img src="/src/assets/lupa.svg" alt="" />
                     </div>
+
                     <!-- Avatar + nome + carrinho -->
-                    <div class="flex items-center justify-center gap-4">
-                        <img class="h-9" src="/src/assets/avatar.svg" alt="" />
-                        <div>Olá, <br />Nome cliente!</div>
-                        <img class="h-7" src="/src/assets/carrinho.svg" alt="" />
+                    <div class="flex items-center justify-center gap-3">
+                        <img class="size-7" src="/src/assets/avatar.svg" alt="" />
+                        <div class="text-sm font-semibold leading-4">Olá, <br />Nome cliente!</div>
+                        <img class="size-7" src="/src/assets/carrinho.svg" alt="" />
                     </div>
                 </div>
 
                 <!-- Categorias -->
                 <div class="flex items-center justify-between w-full">
-                    <!-- Menu hamburguer -->
-                    <div class="flex flex-row gap-2">
-                        <img src="/src/assets/hamburger.svg" alt="" />
-                        <div>Todas as categorias</div>
+                    <!-- Menu hamburguer com dropdown -->
+                    <div class="relative" id="megamenu-container">
+                        <div
+                            class="flex flex-row gap-2 items-center group cursor-pointer"
+                            id="menu-trigger">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke-width="1.5"
+                                stroke="currentColor"
+                                class="size-5 group-hover:text-[#005CFF]">
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                            </svg>
+                            <div class="text-sm font-bold group-hover:text-[#005CFF]">
+                                Todas as categorias
+                            </div>
+                        </div>
+
+                        <!-- Megamenu Dropdown (Hidden by default) -->
+                        <div
+                            id="megamenu"
+                            class="absolute top-full left-0 pt-3 bg-white shadow-lg rounded-md z-50 w-[1280px] flex hidden">
+                            <!-- Categories Column -->
+                            <div class="w-1/4 bg-gray-50 p-4 border-r border-gray-200">
+                                <ul id="categories-list">
+                                    <!-- Categories will be populated by JavaScript -->
+                                </ul>
+                            </div>
+
+                            <!-- Subcategories and Items -->
+                            <div class="flex justify-between w-3/4 p-4">
+                                <div id="subcategories-container" class="grid grid-cols-3 gap-12">
+                                    <!-- Subcategories will be populated by JavaScript -->
+                                </div>
+                                <!-- Card -->
+                                <div
+                                    class="bg-[url('/src/assets/caneca2-gradiente.png')] bg-cover bg-center w-[236px] h-72 rounded-[10px] flex flex-col gap-6 pt-8 pl-6">
+                                    <p class="text-white text-2xl max-w-32">
+                                        Confira os Produtos
+                                        <span class="font-bold">Que acabaram De Chegar</span>
+                                    </p>
+                                    <a
+                                        href=""
+                                        class="rounded-xl w-fit px-6 py-2 border text-white font-bold"
+                                        >VER TODOS</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
                     <!-- Categorias -->
-                    <a href="#" class="hover:text-[#005CFF] hover:scale-108">Departamento</a>
-                    <a href="#" class="hover:text-[#005CFF] hover:scale-108">Departamento</a>
-                    <a href="#" class="hover:text-[#005CFF] hover:scale-108">Departamento</a>
-                    <a href="#" class="hover:text-[#005CFF] hover:scale-108">Departamento</a>
-                    <a href="#" class="hover:text-[#005CFF] hover:scale-108">Departamento</a>
-                    <a href="#" class="hover:text-[#005CFF] hover:scale-108">Departamento</a>
-                    <a href="#" class="hover:text-[#005CFF] hover:scale-108">Departamento</a>
-                    <a href="#" class="hover:text-[#005CFF] hover:scale-108">Departamento</a>
+                    <a href="#" class="hover:text-[#005CFF] hover:scale-105 hover:font-bold text-sm"
+                        >Departamento</a
+                    >
+                    <a href="#" class="hover:text-[#005CFF] hover:scale-105 hover:font-bold text-sm"
+                        >Departamento</a
+                    >
+                    <a href="#" class="hover:text-[#005CFF] hover:scale-105 hover:font-bold text-sm"
+                        >Departamento</a
+                    >
+                    <a href="#" class="hover:text-[#005CFF] hover:scale-105 hover:font-bold text-sm"
+                        >Departamento</a
+                    >
+                    <a href="#" class="hover:text-[#005CFF] hover:scale-105 hover:font-bold text-sm"
+                        >Departamento</a
+                    >
+                    <a href="#" class="hover:text-[#005CFF] hover:scale-105 hover:font-bold text-sm"
+                        >Departamento</a
+                    >
+                    <a href="#" class="hover:text-[#005CFF] hover:scale-105 hover:font-bold text-sm"
+                        >Departamento</a
+                    >
+                    <a href="#" class="hover:text-[#005CFF] hover:scale-105 hover:font-bold text-sm"
+                        >Departamento</a
+                    >
                 </div>
             </div>
         </header>
@@ -115,10 +183,19 @@
             <div class="flex justify-between w-full">
                 <div
                     class="flex flex-col items-center justify-center max-w-[238px] max-h-[409px] p-4 rounded-[10px] border border-[#DDDDDD]">
-                    <img
-                        src="src/assets/foto-carrossel.png"
-                        alt="Imagem do produto"
-                        class="product-img" />
+                    <div class="relative w-full">
+                        <!-- Etiqueta NOVO -->
+                        <span
+                            class="absolute top-0 left-0 bg-[#00264E] text-white text-[10px] font-bold px-2 py-1 rounded">
+                            NOVO
+                        </span>
+
+                        <!-- Imagem do produto -->
+                        <img
+                            src="src/assets/foto-carrossel.png"
+                            alt="Imagem do produto"
+                            class="product-img w-full" />
+                    </div>
                     <h3 class="self-start mt-2 text-ms product-title">
                         Lorem ipsum dolor sit amet consectetuer adipiscing elit
                     </h3>
@@ -604,7 +681,7 @@
                     </div>
 
                     <!-- Institucional -->
-                    <div class="flex flex-col gap-2">
+                    <div class="flex flex-col gap-2 text-sm">
                         <h4 class="font-bold mb-3">Institucional</h4>
                         <h5>Sobre Nós</h5>
                         <h5>Nossas Lojas</h5>
@@ -613,7 +690,7 @@
                     </div>
 
                     <!-- Central de Ajuda -->
-                    <div class="flex flex-col gap-2">
+                    <div class="flex flex-col gap-2 text-sm">
                         <h4 class="font-bold mb-3">Central de Ajuda</h4>
                         <h5>Fale Conosco</h5>
                         <h5>Frete e Entrega</h5>
@@ -623,17 +700,25 @@
                     </div>
 
                     <!-- Atendimento -->
-                    <div class="flex flex-col gap-2">
+                    <div class="flex flex-col gap-2 text-sm">
                         <h4 class="font-bold mb-3">Atendimento</h4>
-                        <h5>Telefone: (00) 1234-5678</h5>
-                        <h5>E-mail: exemplo@exemplo.com.br</h5>
                         <h5>
-                            Horário de atendimento: <br />
+                            <span class="font-bold text-[#303030]">Telefone: </span>(00) 1234-5678
+                        </h5>
+                        <h5>
+                            <span class="font-bold text-[#303030]">E-mail: </span>
+                            exemplo@exemplo.com.br
+                        </h5>
+                        <h5>
+                            <span class="font-bold text-[#303030]"
+                                >Horário de atendimento: <br />
+                            </span>
                             Segunda a Sábado: 07h00 às 23h00 <br />
                             Domingos e Feriados: 07h00 às 21h00
                         </h5>
                     </div>
                 </div>
+
                 <!-- Ícones -->
                 <div class="flex items-center gap-10">
                     <a href="#"
@@ -679,10 +764,10 @@
                 </p>
                 <!-- Ícones -->
                 <div class="flex gap-6 items-center justify-center">
-                    <a href=""><img src="src/assets/certificados/let-s-encrypt.svg" alt=""></a>
-                    <a href=""><img src="src/assets/certificados/vtex-pci-200.svg" alt=""></a>
-                    <a href=""><img src="src/assets/logo-avanti.png" alt="" class="max-h-2.5"></a>
-                    <a href=""><img src="src/assets/certificados/VTEX_Logo.svg" alt=""></a>
+                    <a href=""><img src="src/assets/certificados/let-s-encrypt.svg" alt="" /></a>
+                    <a href=""><img src="src/assets/certificados/vtex-pci-200.svg" alt="" /></a>
+                    <a href=""><img src="src/assets/logo-avanti.png" alt="" class="max-h-2.5" /></a>
+                    <a href=""><img src="src/assets/certificados/VTEX_Logo.svg" alt="" /></a>
                 </div>
             </div>
         </footer>
