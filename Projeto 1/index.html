@@ -1,777 +1,937 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Projeto 1</title>
-    </head>
-    <body class="bg-white">
-        <header class="flex flex-col items-center justify-center sticky top-0 z-100">
-            <!-- Faixa azul -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projeto 1</title>
+  </head>
+  <body class="bg-white">
+    <header
+      class="sticky top-0 z-100 flex flex-col items-center justify-center"
+    >
+      <!-- Faixa azul -->
+      <div
+        class="flex h-7.5 w-screen items-center justify-center bg-[#005CFF] text-sm font-bold text-white"
+      >
+        Ganhe &nbsp;
+        <span class="rounded-sm bg-[#6220C1] px-1.5">R$10,00</span> &nbsp; de
+        desconto no seu primeiro pedido. Utilize o cupom &nbsp;
+        <span class="font-light italic">DESCONTO10 </span>
+      </div>
+
+      <!-- Faixa branca -->
+      <div
+        class="relative z-50 flex h-29.5 w-screen flex-col items-center justify-center gap-6 bg-white px-82 shadow-[0_0_8px_rgba(0,0,0,0.16)]"
+      >
+        <div class="flex w-full items-center justify-between">
+          <!-- Logo -->
+          <img src="/src/assets/logo-avanti.png" alt="" class="h-7" />
+
+          <!-- Searchbar -->
+          <div
+            class="flex h-10 w-[594px] items-center justify-center rounded-[10px] border border-[#DDDDDD] px-6"
+          >
+            <input
+              class="w-full placeholder:text-sm placeholder:font-semibold placeholder:text-black focus:outline-none"
+              type="text"
+              placeholder="Digite aqui o que você procura"
+            />
+            <img src="/src/assets/lupa.svg" alt="" />
+          </div>
+
+          <!-- Avatar + nome + carrinho -->
+          <div class="flex items-center justify-center gap-3">
+            <img class="size-7" src="/src/assets/avatar.svg" alt="" />
+            <div class="text-sm leading-4 font-semibold">
+              Olá, <br />Nome cliente!
+            </div>
+            <img class="size-7" src="/src/assets/carrinho.svg" alt="" />
+          </div>
+        </div>
+
+        <!-- Categorias -->
+        <div class="flex w-full items-center justify-between">
+          <!-- Menu hamburguer com dropdown -->
+          <div class="relative" id="megamenu-container">
             <div
-                class="flex items-center justify-center bg-[#005CFF] w-screen h-7.5 text-white text-sm font-bold">
-                Ganhe &nbsp; <span class="bg-[#6220C1] px-1.5 rounded-sm">R$10,00</span> &nbsp; de
-                desconto no seu primeiro pedido. Utilize o cupom &nbsp;
-                <span class="italic font-light">DESCONTO10 </span>
+              class="group flex cursor-pointer flex-row items-center gap-2"
+              id="menu-trigger"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-5 group-hover:text-[#005CFF]"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              </svg>
+              <div class="text-sm font-bold group-hover:text-[#005CFF]">
+                Todas as categorias
+              </div>
             </div>
 
-            <!-- Faixa branca -->
+            <!-- Megamenu (hidden) -->
             <div
-                class="flex flex-col gap-6 items-center justify-center w-screen h-29.5 shadow-[0_0_8px_rgba(0,0,0,0.16)] z-50 bg-white px-82 relative">
-                <div class="flex justify-between items-center w-full">
-                    <!-- Logo -->
-                    <img src="/src/assets/logo-avanti.png" alt="" class="h-7" />
+              id="megamenu"
+              class="absolute top-full left-0 z-50 flex hidden w-[1280px] rounded-md bg-white pt-3 shadow-lg"
+            >
+              <!-- Coluna das categorias -->
+              <div
+                class="max-h-80 w-1/4 overflow-y-auto border-r border-gray-200 bg-gray-50 p-4"
+              >
+                <ul id="categories-list">
+                  <!-- Categories populadas com JS -->
+                </ul>
+              </div>
 
-                    <!-- Searchbar -->
-                    <div
-                        class="flex items-center justify-center w-[594px] h-10 border border-[#DDDDDD] rounded-[10px] px-6">
-                        <input
-                            class="w-full focus:outline-none placeholder:text-sm placeholder:font-semibold placeholder:text-black"
-                            type="text"
-                            placeholder="Digite aqui o que você procura" />
-                        <img src="/src/assets/lupa.svg" alt="" />
-                    </div>
-
-                    <!-- Avatar + nome + carrinho -->
-                    <div class="flex items-center justify-center gap-3">
-                        <img class="size-7" src="/src/assets/avatar.svg" alt="" />
-                        <div class="text-sm font-semibold leading-4">Olá, <br />Nome cliente!</div>
-                        <img class="size-7" src="/src/assets/carrinho.svg" alt="" />
-                    </div>
+              <!-- Subcategorias e Itens -->
+              <div class="flex w-3/4 justify-between p-4">
+                <div
+                  id="subcategories-container"
+                  class="grid grid-cols-3 gap-12"
+                >
+                  <!-- Subcategorias populadas com JS -->
                 </div>
-
-                <!-- Categorias -->
-                <div class="flex items-center justify-between w-full">
-                    <!-- Menu hamburguer com dropdown -->
-                    <div class="relative" id="megamenu-container">
-                        <div
-                            class="flex flex-row gap-2 items-center group cursor-pointer"
-                            id="menu-trigger">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke-width="1.5"
-                                stroke="currentColor"
-                                class="size-5 group-hover:text-[#005CFF]">
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                            </svg>
-                            <div class="text-sm font-bold group-hover:text-[#005CFF]">
-                                Todas as categorias
-                            </div>
-                        </div>
-
-                        <!-- Megamenu Dropdown (Hidden by default) -->
-                        <div
-                            id="megamenu"
-                            class="absolute top-full left-0 pt-3 bg-white shadow-lg rounded-md z-50 w-[1280px] flex hidden">
-                            <!-- Categories Column -->
-                            <div class="w-1/4 bg-gray-50 p-4 border-r border-gray-200">
-                                <ul id="categories-list">
-                                    <!-- Categories will be populated by JavaScript -->
-                                </ul>
-                            </div>
-
-                            <!-- Subcategories and Items -->
-                            <div class="flex justify-between w-3/4 p-4">
-                                <div id="subcategories-container" class="grid grid-cols-3 gap-12">
-                                    <!-- Subcategories will be populated by JavaScript -->
-                                </div>
-                                <!-- Card -->
-                                <div
-                                    class="bg-[url('/src/assets/caneca2-gradiente.png')] bg-cover bg-center w-[236px] h-72 rounded-[10px] flex flex-col gap-6 pt-8 pl-6">
-                                    <p class="text-white text-2xl max-w-32">
-                                        Confira os Produtos
-                                        <span class="font-bold">Que acabaram De Chegar</span>
-                                    </p>
-                                    <a
-                                        href=""
-                                        class="rounded-xl w-fit px-6 py-2 border text-white font-bold"
-                                        >VER TODOS</a
-                                    >
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Categorias -->
-                    <a href="#" class="hover:text-[#005CFF] hover:scale-105 hover:font-bold text-sm"
-                        >Departamento</a
-                    >
-                    <a href="#" class="hover:text-[#005CFF] hover:scale-105 hover:font-bold text-sm"
-                        >Departamento</a
-                    >
-                    <a href="#" class="hover:text-[#005CFF] hover:scale-105 hover:font-bold text-sm"
-                        >Departamento</a
-                    >
-                    <a href="#" class="hover:text-[#005CFF] hover:scale-105 hover:font-bold text-sm"
-                        >Departamento</a
-                    >
-                    <a href="#" class="hover:text-[#005CFF] hover:scale-105 hover:font-bold text-sm"
-                        >Departamento</a
-                    >
-                    <a href="#" class="hover:text-[#005CFF] hover:scale-105 hover:font-bold text-sm"
-                        >Departamento</a
-                    >
-                    <a href="#" class="hover:text-[#005CFF] hover:scale-105 hover:font-bold text-sm"
-                        >Departamento</a
-                    >
-                    <a href="#" class="hover:text-[#005CFF] hover:scale-105 hover:font-bold text-sm"
-                        >Departamento</a
-                    >
+                <!-- Card -->
+                <div
+                  class="flex h-72 w-[236px] flex-col gap-6 rounded-[10px] bg-[url('/src/assets/caneca2-gradiente.png')] bg-cover bg-center pt-8 pl-6"
+                >
+                  <p class="max-w-32 text-2xl text-white">
+                    Confira os Produtos
+                    <span class="font-bold">Que acabaram De Chegar</span>
+                  </p>
+                  <a
+                    href=""
+                    class="w-fit rounded-xl border px-6 py-2 font-bold text-white"
+                    >VER TODOS</a
+                  >
                 </div>
+              </div>
             </div>
-        </header>
+          </div>
 
-        <!-- Banner -->
-        <section
-            class="bg-[#E7E7EA] w-screen h-[510px] flex items-center justify-center overflow-hidden">
-            <!-- Imagem -->
+          <!-- Categorias -->
+          <a
+            href="#"
+            class="text-sm hover:scale-105 hover:font-bold hover:text-[#005CFF]"
+            >Departamento</a
+          >
+          <a
+            href="#"
+            class="text-sm hover:scale-105 hover:font-bold hover:text-[#005CFF]"
+            >Departamento</a
+          >
+          <a
+            href="#"
+            class="text-sm hover:scale-105 hover:font-bold hover:text-[#005CFF]"
+            >Departamento</a
+          >
+          <a
+            href="#"
+            class="text-sm hover:scale-105 hover:font-bold hover:text-[#005CFF]"
+            >Departamento</a
+          >
+          <a
+            href="#"
+            class="text-sm hover:scale-105 hover:font-bold hover:text-[#005CFF]"
+            >Departamento</a
+          >
+          <a
+            href="#"
+            class="text-sm hover:scale-105 hover:font-bold hover:text-[#005CFF]"
+            >Departamento</a
+          >
+          <a
+            href="#"
+            class="text-sm hover:scale-105 hover:font-bold hover:text-[#005CFF]"
+            >Departamento</a
+          >
+          <a
+            href="#"
+            class="text-sm hover:scale-105 hover:font-bold hover:text-[#005CFF]"
+            >Departamento</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <!-- Banner -->
+    <section
+      class="flex h-[510px] w-screen items-center justify-center overflow-hidden bg-[#E7E7EA]"
+    >
+      <!-- Imagem -->
+      <img
+        src="/src/assets/cadeira.jpeg"
+        alt="Cadeira com roupas empilhadas"
+        class="w-1/3 -translate-y-26 mix-blend-darken"
+      />
+      <!-- Texto -->
+      <div class="flex flex-col items-center justify-center gap-8">
+        <h1 class="text-8xl">
+          <span class="font-bold">SUPER</span
+          ><span class="font-light">SALE</span>
+        </h1>
+        <p class="text-2xl font-bold tracking-[0.3em] text-[#005CFF]">
+          ITENS SELECIONADOS COM ATÉ
+        </p>
+        <p class="text-6xl font-bold text-[#005CFF]">50%OFF</p>
+      </div>
+    </section>
+
+    <!-- Template do card -->
+    <template id="product-card">
+      <div
+        class="flex max-h-[409px] max-w-[238px] flex-col items-center justify-center rounded-[10px] border border-[#DDDDDD] p-4"
+      >
+        <img src="" alt="Imagem do produto" class="product-img" />
+        <h3 class="text-ms product-title mt-2 self-start"></h3>
+        <div class="mt-1 flex items-center gap-2 self-start">
+          <div>
+            <p
+              class="product-original-price self-start text-xs text-[#303030] line-through"
+            ></p>
+            <p class="product-price self-start text-base font-bold"></p>
+          </div>
+          <p
+            class="product-discount m-auto rounded-[4px] bg-[#5EC0BE] px-2 py-1 text-xs text-white underline"
+          ></p>
+        </div>
+        <p class="mt-1 self-start text-[12px]">
+          Ou em até <span class="product-installment font-bold"></span>
+        </p>
+        <button
+          class="mt-4 h-10 w-full rounded-[10px] bg-[#005CFF] px-6 py-2.5 font-bold text-white hover:bg-[#0026ff]"
+        >
+          Comprar
+        </button>
+      </div>
+    </template>
+
+    <!-- Carrosel -->
+    <section
+      class="mt-25 flex flex-col items-center justify-center gap-4 px-82"
+    >
+      <!-- Lançamentos + ver mais -->
+      <div class="flex w-full justify-between">
+        <p class="text-xl font-bold">Lançamentos</p>
+        <a href="#" class="text-sm font-bold hover:text-[#005CFF]">Ver mais</a>
+      </div>
+
+      <!-- Imagens -->
+      <div class="flex w-full justify-between">
+        <div
+          class="flex max-h-[409px] max-w-[238px] flex-col items-center justify-center rounded-[10px] border border-[#DDDDDD] p-4"
+        >
+          <div class="relative w-full">
+            <!-- Etiqueta NOVO -->
+            <span
+              class="absolute top-0 left-0 rounded bg-[#00264E] px-2 py-1 text-[10px] font-bold text-white"
+            >
+              NOVO
+            </span>
+
+            <!-- Imagem do produto -->
             <img
-                src="/src/assets/cadeira.jpeg"
-                alt="Cadeira com roupas empilhadas"
-                class="w-1/3 -translate-y-26" />
-            <!-- Texto -->
-            <div class="flex items-center justify-center flex-col gap-8">
-                <h1 class="text-8xl">
-                    <span class="font-bold">SUPER</span><span class="font-light">SALE</span>
-                </h1>
-                <p class="text-2xl font-bold text-[#005CFF] tracking-[0.3em]">
-                    ITENS SELECIONADOS COM ATÉ
-                </p>
-                <p class="text-6xl font-bold text-[#005CFF]">50%OFF</p>
+              src="src/assets/foto-carrossel.png"
+              alt="Imagem do produto"
+              class="product-img w-full"
+            />
+          </div>
+          <h3 class="text-ms product-title mt-2 self-start">
+            Lorem ipsum dolor sit amet consectetuer adipiscing elit
+          </h3>
+          <div class="mt-1 flex items-center gap-2 self-start">
+            <div>
+              <p
+                class="product-original-price self-start text-xs text-[#303030] line-through"
+              >
+                R$100,00
+              </p>
+              <p class="product-price self-start text-base font-bold">
+                R$79,90
+              </p>
             </div>
-        </section>
-
-        <!-- Template do card -->
-        <template id="product-card">
-            <div
-                class="flex flex-col items-center justify-center max-w-[238px] max-h-[409px] p-4 rounded-[10px] border border-[#DDDDDD]">
-                <img src="" alt="Imagem do produto" class="product-img" />
-                <h3 class="self-start mt-2 text-ms product-title"></h3>
-                <div class="flex self-start items-center gap-2 mt-1">
-                    <div>
-                        <p
-                            class="self-start line-through text-xs text-[#303030] product-original-price"></p>
-                        <p class="self-start font-bold text-base product-price"></p>
-                    </div>
-                    <p
-                        class="bg-[#5EC0BE] text-white px-2 py-1 m-auto rounded-[4px] text-xs underline product-discount"></p>
-                </div>
-                <p class="self-start text-[12px] mt-1">
-                    Ou em até <span class="font-bold product-installment"></span>
-                </p>
-                <button
-                    class="bg-[#005CFF] hover:bg-[#0026ff] text-white w-full h-10 rounded-[10px] mt-4 font-bold px-6 py-2.5">
-                    Comprar
-                </button>
-            </div>
-        </template>
-
-        <!-- Carrosel -->
-        <section class="flex items-center justify-center mt-25 flex-col gap-4 px-82">
-            <!-- Lançamentos + ver mais -->
-            <div class="flex justify-between w-full">
-                <p class="font-bold text-xl">Lançamentos</p>
-                <a href="#" class="hover:text-[#005CFF] font-bold text-sm">Ver mais</a>
-            </div>
-
-            <!-- Imagens -->
-            <div class="flex justify-between w-full">
-                <div
-                    class="flex flex-col items-center justify-center max-w-[238px] max-h-[409px] p-4 rounded-[10px] border border-[#DDDDDD]">
-                    <div class="relative w-full">
-                        <!-- Etiqueta NOVO -->
-                        <span
-                            class="absolute top-0 left-0 bg-[#00264E] text-white text-[10px] font-bold px-2 py-1 rounded">
-                            NOVO
-                        </span>
-
-                        <!-- Imagem do produto -->
-                        <img
-                            src="src/assets/foto-carrossel.png"
-                            alt="Imagem do produto"
-                            class="product-img w-full" />
-                    </div>
-                    <h3 class="self-start mt-2 text-ms product-title">
-                        Lorem ipsum dolor sit amet consectetuer adipiscing elit
-                    </h3>
-                    <div class="flex self-start items-center gap-2 mt-1">
-                        <div>
-                            <p
-                                class="self-start line-through text-xs text-[#303030] product-original-price">
-                                R$100,00
-                            </p>
-                            <p class="self-start font-bold text-base product-price">R$79,90</p>
-                        </div>
-                        <p
-                            class="bg-[#5EC0BE] text-white px-2 py-1 m-auto rounded-[4px] text-xs underline product-discount">
-                            10%OFF
-                        </p>
-                    </div>
-                    <p class="self-start text-[12px] mt-1">
-                        Ou em até
-                        <span class="font-bold product-installment">10x de R$7,90</span>
-                    </p>
-                    <button
-                        class="bg-[#005CFF] hover:bg-[#0026ff] text-white w-full h-10 rounded-[10px] mt-4 font-bold px-6 py-2.5">
-                        Comprar
-                    </button>
-                </div>
-
-                <div
-                    class="flex flex-col items-center justify-center max-w-[238px] max-h-[409px] p-4 rounded-[10px] border border-[#DDDDDD]">
-                    <img
-                        src="src/assets/foto-carrossel.png"
-                        alt="Imagem do produto"
-                        class="product-img" />
-                    <h3 class="self-start mt-2 text-ms product-title">
-                        Lorem ipsum dolor sit amet consectetuer adipiscing elit
-                    </h3>
-                    <div class="flex self-start items-center gap-2 mt-1">
-                        <div>
-                            <p
-                                class="self-start line-through text-xs text-[#303030] product-original-price">
-                                R$100,00
-                            </p>
-                            <p class="self-start font-bold text-base product-price">R$79,90</p>
-                        </div>
-                        <p
-                            class="bg-[#5EC0BE] text-white px-2 py-1 m-auto rounded-[4px] text-xs underline product-discount">
-                            10%OFF
-                        </p>
-                    </div>
-                    <p class="self-start text-[12px] mt-1">
-                        Ou em até
-                        <span class="font-bold product-installment">10x de R$7,90</span>
-                    </p>
-                    <button
-                        class="bg-[#005CFF] hover:bg-[#0026ff] text-white w-full h-10 rounded-[10px] mt-4 font-bold px-6 py-2.5">
-                        Comprar
-                    </button>
-                </div>
-
-                <div
-                    class="flex flex-col items-center justify-center max-w-[238px] max-h-[409px] p-4 rounded-[10px] border border-[#DDDDDD]">
-                    <img
-                        src="src/assets/foto-carrossel.png"
-                        alt="Imagem do produto"
-                        class="product-img" />
-                    <h3 class="self-start mt-2 text-ms product-title">
-                        Lorem ipsum dolor sit amet consectetuer adipiscing elit
-                    </h3>
-                    <div class="flex self-start items-center gap-2 mt-1">
-                        <div>
-                            <p
-                                class="self-start line-through text-xs text-[#303030] product-original-price">
-                                R$100,00
-                            </p>
-                            <p class="self-start font-bold text-base product-price">R$79,90</p>
-                        </div>
-                        <p
-                            class="bg-[#5EC0BE] text-white px-2 py-1 m-auto rounded-[4px] text-xs underline product-discount">
-                            10%OFF
-                        </p>
-                    </div>
-                    <p class="self-start text-[12px] mt-1">
-                        Ou em até
-                        <span class="font-bold product-installment">10x de R$7,90</span>
-                    </p>
-                    <button
-                        class="bg-[#005CFF] hover:bg-[#0026ff] text-white w-full h-10 rounded-[10px] mt-4 font-bold px-6 py-2.5">
-                        Comprar
-                    </button>
-                </div>
-
-                <div
-                    class="flex flex-col items-center justify-center max-w-[238px] max-h-[409px] p-4 rounded-[10px] border border-[#DDDDDD]">
-                    <img
-                        src="src/assets/foto-carrossel.png"
-                        alt="Imagem do produto"
-                        class="product-img" />
-                    <h3 class="self-start mt-2 text-ms product-title">
-                        Lorem ipsum dolor sit amet consectetuer adipiscing elit
-                    </h3>
-                    <div class="flex self-start items-center gap-2 mt-1">
-                        <div>
-                            <p
-                                class="self-start line-through text-xs text-[#303030] product-original-price">
-                                R$100,00
-                            </p>
-                            <p class="self-start font-bold text-base product-price">R$79,90</p>
-                        </div>
-                        <p
-                            class="bg-[#5EC0BE] text-white px-2 py-1 m-auto rounded-[4px] text-xs underline product-discount">
-                            10%OFF
-                        </p>
-                    </div>
-                    <p class="self-start text-[12px] mt-1">
-                        Ou em até
-                        <span class="font-bold product-installment">10x de R$7,90</span>
-                    </p>
-                    <button
-                        class="bg-[#005CFF] hover:bg-[#0026ff] text-white w-full h-10 rounded-[10px] mt-4 font-bold px-6 py-2.5">
-                        Comprar
-                    </button>
-                </div>
-
-                <div
-                    class="flex flex-col items-center justify-center max-w-[238px] max-h-[409px] p-4 rounded-[10px] border border-[#DDDDDD]">
-                    <img
-                        src="src/assets/foto-carrossel.png"
-                        alt="Imagem do produto"
-                        class="product-img" />
-                    <h3 class="self-start mt-2 text-ms product-title">
-                        Lorem ipsum dolor sit amet consectetuer adipiscing elit
-                    </h3>
-                    <div class="flex self-start items-center gap-2 mt-1">
-                        <div>
-                            <p
-                                class="self-start line-through text-xs text-[#303030] product-original-price">
-                                R$100,00
-                            </p>
-                            <p class="self-start font-bold text-base product-price">R$79,90</p>
-                        </div>
-                        <p
-                            class="bg-[#5EC0BE] text-white px-2 py-1 m-auto rounded-[4px] text-xs underline product-discount">
-                            10%OFF
-                        </p>
-                    </div>
-                    <p class="self-start text-[12px] mt-1">
-                        Ou em até
-                        <span class="font-bold product-installment">10x de R$7,90</span>
-                    </p>
-                    <button
-                        class="bg-[#005CFF] hover:bg-[#0026ff] text-white w-full h-10 rounded-[10px] mt-4 font-bold px-6 py-2.5">
-                        Comprar
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Foto caneca -->
-        <section class="flex mt-30 gap-8 items-center justify-between px-82">
-            <!-- Lado imagem -->
-            <div class="bg-[#C2C2C2] w-[650px] shrink-0 h-[747px] flex items-center justify-center">
-                <img src="/src/assets/caneca.png" alt="" />
-            </div>
-            <!-- Lado texto -->
-            <div class="flex flex-col justify-center text-left w-[530px]">
-                <h1 class="text-3xl font-bold">LOREM IPSUM</h1>
-                <p class="text-lg mt-6">
-                    Duis consectetur metus nec lacus auctor dignissim. Mauris vitae finibus dui.
-                    Mauris laoreet lacus ut eleifend viverra. Cras efficitur volutpat dui, in
-                    lobortis metus lacinia sit amet. Sed lacinia pharetra magna, vel pulvinar ligula
-                    hendrerit a. Maecenas fringilla porttitor tortor eget lacinia. Donec
-                    sollicitudin euismod orci, auctor fringilla magna consequat interdum. Fusce
-                    sagittis elit a libero commodo egestas efficitur id augue.
-                </p>
-                <br />
-                <p class="text-lg mt-5">
-                    Duis consectetur metus nec lacus auctor dignissim. Mauris vitae finibus dui.
-                    Mauris laoreet lacus ut eleifend viverra. Cras efficitur volutpat dui, in
-                    lobortis metus lacinia sit amet. Sed lacinia pharetra magna, vel pulvinar ligula
-                    hendrerit a. Maecenas fringilla porttitor tortor eget lacinia. Donec
-                    sollicitudin euismod orci, auctor fringilla magna consequat interdum. Fusce
-                    sagittis elit a libero commodo egestas efficitur id augue.
-                </p>
-            </div>
-        </section>
-
-        <!-- Foto caneca 2 -->
-        <section class="bg-[#DEDEDE] px-82 py-11 flex items-center justify-between mt-30 gap-20">
-            <!-- Lado texto -->
-            <div class="flex flex-col gap-16 items-center justify-center">
-                <h1 class="text-3xl font-bold text-[#4F4F4F]">LOREM IMPSUM</h1>
-
-                <div class="flex gap-5">
-                    <img src="src/assets/Circulo e Icone.svg" alt="" class="w-24" />
-                    <p class="text-lg text-[#4F4F4F] w-[360px]">
-                        Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
-                        nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu,
-                        pretium quis, sem.
-                    </p>
-                </div>
-                <div class="flex gap-5">
-                    <img src="src/assets/Circulo e Icone.svg" alt="" class="w-24" />
-                    <p class="text-lg text-[#4F4F4F] w-[360px]">
-                        Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
-                        nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu,
-                        pretium quis, sem.
-                    </p>
-                </div>
-                <div class="flex gap-5">
-                    <img src="src/assets/Circulo e Icone.svg" alt="" class="w-24" />
-                    <p class="text-lg text-[#4F4F4F] w-[360px]">
-                        Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
-                        nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu,
-                        pretium quis, sem.
-                    </p>
-                </div>
-            </div>
-            <!-- Lado imagem -->
-            <img src="src/assets/caneca2.png" alt="" class="w-[652px] h-[728px] object-cover" />
-        </section>
-
-        <!-- Foto caneca -->
-        <section class="flex mt-30 gap-8 items-center justify-between px-82">
-            <!-- Lado imagem -->
-            <div class="bg-[#C2C2C2] w-[650px] shrink-0 h-[747px] flex items-center justify-center">
-                <img src="/src/assets/caneca.png" alt="" />
-            </div>
-            <!-- Lado texto -->
-            <div class="flex flex-col justify-center text-left w-[530px]">
-                <h1 class="text-3xl font-bold">LOREM IPSUM</h1>
-                <p class="text-lg mt-6">
-                    Duis consectetur metus nec lacus auctor dignissim. Mauris vitae finibus dui.
-                    Mauris laoreet lacus ut eleifend viverra. Cras efficitur volutpat dui, in
-                    lobortis metus lacinia sit amet. Sed lacinia pharetra magna, vel pulvinar ligula
-                    hendrerit a. Maecenas fringilla porttitor tortor eget lacinia. Donec
-                    sollicitudin euismod orci, auctor fringilla magna consequat interdum. Fusce
-                    sagittis elit a libero commodo egestas efficitur id augue.
-                </p>
-                <br />
-                <p class="text-lg mt-5">
-                    Duis consectetur metus nec lacus auctor dignissim. Mauris vitae finibus dui.
-                    Mauris laoreet lacus ut eleifend viverra. Cras efficitur volutpat dui, in
-                    lobortis metus lacinia sit amet. Sed lacinia pharetra magna, vel pulvinar ligula
-                    hendrerit a. Maecenas fringilla porttitor tortor eget lacinia. Donec
-                    sollicitudin euismod orci, auctor fringilla magna consequat interdum. Fusce
-                    sagittis elit a libero commodo egestas efficitur id augue.
-                </p>
-            </div>
-        </section>
-
-        <!-- Carrosel -->
-        <section class="flex items-center justify-center mt-25 flex-col gap-4 px-82">
-            <!-- Lançamentos + ver mais -->
-            <div class="flex justify-between w-full">
-                <p class="font-bold text-xl">Lançamentos</p>
-                <a href="#" class="hover:text-[#005CFF] font-bold text-sm">Ver mais</a>
-            </div>
-
-            <!-- Imagens -->
-            <div class="flex justify-between w-full">
-                <div
-                    class="flex flex-col items-center justify-center max-w-[238px] max-h-[409px] p-4 rounded-[10px] border border-[#DDDDDD]">
-                    <img
-                        src="src/assets/foto-carrossel.png"
-                        alt="Imagem do produto"
-                        class="product-img" />
-                    <h3 class="self-start mt-2 text-ms product-title">
-                        Lorem ipsum dolor sit amet consectetuer adipiscing elit
-                    </h3>
-                    <div class="flex self-start items-center gap-2 mt-1">
-                        <div>
-                            <p
-                                class="self-start line-through text-xs text-[#303030] product-original-price">
-                                R$100,00
-                            </p>
-                            <p class="self-start font-bold text-base product-price">R$79,90</p>
-                        </div>
-                        <p
-                            class="bg-[#5EC0BE] text-white px-2 py-1 m-auto rounded-[4px] text-xs underline product-discount">
-                            10%OFF
-                        </p>
-                    </div>
-                    <p class="self-start text-[12px] mt-1">
-                        Ou em até
-                        <span class="font-bold product-installment">10x de R$7,90</span>
-                    </p>
-                    <button
-                        class="bg-[#005CFF] hover:bg-[#0026ff] text-white w-full h-10 rounded-[10px] mt-4 font-bold px-6 py-2.5">
-                        Comprar
-                    </button>
-                </div>
-
-                <div
-                    class="flex flex-col items-center justify-center max-w-[238px] max-h-[409px] p-4 rounded-[10px] border border-[#DDDDDD]">
-                    <img
-                        src="src/assets/foto-carrossel.png"
-                        alt="Imagem do produto"
-                        class="product-img" />
-                    <h3 class="self-start mt-2 text-ms product-title">
-                        Lorem ipsum dolor sit amet consectetuer adipiscing elit
-                    </h3>
-                    <div class="flex self-start items-center gap-2 mt-1">
-                        <div>
-                            <p
-                                class="self-start line-through text-xs text-[#303030] product-original-price">
-                                R$100,00
-                            </p>
-                            <p class="self-start font-bold text-base product-price">R$79,90</p>
-                        </div>
-                        <p
-                            class="bg-[#5EC0BE] text-white px-2 py-1 m-auto rounded-[4px] text-xs underline product-discount">
-                            10%OFF
-                        </p>
-                    </div>
-                    <p class="self-start text-[12px] mt-1">
-                        Ou em até
-                        <span class="font-bold product-installment">10x de R$7,90</span>
-                    </p>
-                    <button
-                        class="bg-[#005CFF] hover:bg-[#0026ff] text-white w-full h-10 rounded-[10px] mt-4 font-bold px-6 py-2.5">
-                        Comprar
-                    </button>
-                </div>
-
-                <div
-                    class="flex flex-col items-center justify-center max-w-[238px] max-h-[409px] p-4 rounded-[10px] border border-[#DDDDDD]">
-                    <img
-                        src="src/assets/foto-carrossel.png"
-                        alt="Imagem do produto"
-                        class="product-img" />
-                    <h3 class="self-start mt-2 text-ms product-title">
-                        Lorem ipsum dolor sit amet consectetuer adipiscing elit
-                    </h3>
-                    <div class="flex self-start items-center gap-2 mt-1">
-                        <div>
-                            <p
-                                class="self-start line-through text-xs text-[#303030] product-original-price">
-                                R$100,00
-                            </p>
-                            <p class="self-start font-bold text-base product-price">R$79,90</p>
-                        </div>
-                        <p
-                            class="bg-[#5EC0BE] text-white px-2 py-1 m-auto rounded-[4px] text-xs underline product-discount">
-                            10%OFF
-                        </p>
-                    </div>
-                    <p class="self-start text-[12px] mt-1">
-                        Ou em até
-                        <span class="font-bold product-installment">10x de R$7,90</span>
-                    </p>
-                    <button
-                        class="bg-[#005CFF] hover:bg-[#0026ff] text-white w-full h-10 rounded-[10px] mt-4 font-bold px-6 py-2.5">
-                        Comprar
-                    </button>
-                </div>
-
-                <div
-                    class="flex flex-col items-center justify-center max-w-[238px] max-h-[409px] p-4 rounded-[10px] border border-[#DDDDDD]">
-                    <img
-                        src="src/assets/foto-carrossel.png"
-                        alt="Imagem do produto"
-                        class="product-img" />
-                    <h3 class="self-start mt-2 text-ms product-title">
-                        Lorem ipsum dolor sit amet consectetuer adipiscing elit
-                    </h3>
-                    <div class="flex self-start items-center gap-2 mt-1">
-                        <div>
-                            <p
-                                class="self-start line-through text-xs text-[#303030] product-original-price">
-                                R$100,00
-                            </p>
-                            <p class="self-start font-bold text-base product-price">R$79,90</p>
-                        </div>
-                        <p
-                            class="bg-[#5EC0BE] text-white px-2 py-1 m-auto rounded-[4px] text-xs underline product-discount">
-                            10%OFF
-                        </p>
-                    </div>
-                    <p class="self-start text-[12px] mt-1">
-                        Ou em até
-                        <span class="font-bold product-installment">10x de R$7,90</span>
-                    </p>
-                    <button
-                        class="bg-[#005CFF] hover:bg-[#0026ff] text-white w-full h-10 rounded-[10px] mt-4 font-bold px-6 py-2.5">
-                        Comprar
-                    </button>
-                </div>
-
-                <div
-                    class="flex flex-col items-center justify-center max-w-[238px] max-h-[409px] p-4 rounded-[10px] border border-[#DDDDDD]">
-                    <img
-                        src="src/assets/foto-carrossel.png"
-                        alt="Imagem do produto"
-                        class="product-img" />
-                    <h3 class="self-start mt-2 text-ms product-title">
-                        Lorem ipsum dolor sit amet consectetuer adipiscing elit
-                    </h3>
-                    <div class="flex self-start items-center gap-2 mt-1">
-                        <div>
-                            <p
-                                class="self-start line-through text-xs text-[#303030] product-original-price">
-                                R$100,00
-                            </p>
-                            <p class="self-start font-bold text-base product-price">R$79,90</p>
-                        </div>
-                        <p
-                            class="bg-[#5EC0BE] text-white px-2 py-1 m-auto rounded-[4px] text-xs underline product-discount">
-                            10%OFF
-                        </p>
-                    </div>
-                    <p class="self-start text-[12px] mt-1">
-                        Ou em até
-                        <span class="font-bold product-installment">10x de R$7,90</span>
-                    </p>
-                    <button
-                        class="bg-[#005CFF] hover:bg-[#0026ff] text-white w-full h-10 rounded-[10px] mt-4 font-bold px-6 py-2.5">
-                        Comprar
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Banner 2 -->
-        <section
-            class="w-screen h-[660px] bg-[url('/src/assets/imagem-banner.png')] bg-cover bg-center flex items-center justify-center mt-25">
-            <div
-                class="w-screen h-[132px] bg-[#005CFF] flex items-center justify-center text-white">
-                <p class="text-3xl">
-                    Entre em contato conosco e verifique a disponibilidade para sua região!
-                </p>
-            </div>
-        </section>
-
-        <!-- Newsletter -->
-        <section class="flex flex-col items-center justify-center gap-10 mt-12">
-            <p class="text-xl font-bold">
-                Cadastre-se na nossa <span class="text-[#005CFF]">newsletter</span>
+            <p
+              class="product-discount m-auto rounded-[4px] bg-[#5EC0BE] px-2 py-1 text-xs text-white underline"
+            >
+              10%OFF
             </p>
-            <div
-                class="flex items-center justify-center bg-[#DEDEDE] w-[1260px] h-[176px] rounded-lg gap-6">
-                <input
-                    type="text"
-                    placeholder="Digite seu nome"
-                    class="w-70 h-12 rounded-lg px-4 bg-white placeholder-[#303030] placeholder:sm" />
-                <input
-                    type="email"
-                    placeholder="Digite seu e-mail"
-                    class="w-70 h-12 rounded-lg px-4 bg-white placeholder-[#303030] placeholder:sm" />
+          </div>
+          <p class="mt-1 self-start text-[12px]">
+            Ou em até
+            <span class="product-installment font-bold">10x de R$7,90</span>
+          </p>
+          <button
+            class="mt-4 h-10 w-full rounded-[10px] bg-[#005CFF] px-6 py-2.5 font-bold text-white hover:bg-[#0026ff]"
+          >
+            Comprar
+          </button>
+        </div>
 
-                <div class="flex items-center justify-center gap-2">
-                    <input type="checkbox" id="terms" class="rounded-sm" />
-                    <label for="terms" class="text-xs text-[#656565]">
-                        Estou de acordo com a
-                        <a href="#" class="underline">Política de Privacidade</a>
-                    </label>
-                </div>
-
-                <input
-                    type="submit"
-                    value="Cadastrar"
-                    class="text-base font-bold bg-[#005CFF] text-white rounded-lg px-6 py-3.5 cursor-pointer" />
+        <div
+          class="flex max-h-[409px] max-w-[238px] flex-col items-center justify-center rounded-[10px] border border-[#DDDDDD] p-4"
+        >
+          <img
+            src="src/assets/foto-carrossel.png"
+            alt="Imagem do produto"
+            class="product-img"
+          />
+          <h3 class="text-ms product-title mt-2 self-start">
+            Lorem ipsum dolor sit amet consectetuer adipiscing elit
+          </h3>
+          <div class="mt-1 flex items-center gap-2 self-start">
+            <div>
+              <p
+                class="product-original-price self-start text-xs text-[#303030] line-through"
+              >
+                R$100,00
+              </p>
+              <p class="product-price self-start text-base font-bold">
+                R$79,90
+              </p>
             </div>
-        </section>
+            <p
+              class="product-discount m-auto rounded-[4px] bg-[#5EC0BE] px-2 py-1 text-xs text-white underline"
+            >
+              10%OFF
+            </p>
+          </div>
+          <p class="mt-1 self-start text-[12px]">
+            Ou em até
+            <span class="product-installment font-bold">10x de R$7,90</span>
+          </p>
+          <button
+            class="mt-4 h-10 w-full rounded-[10px] bg-[#005CFF] px-6 py-2.5 font-bold text-white hover:bg-[#0026ff]"
+          >
+            Comprar
+          </button>
+        </div>
 
-        <footer class="mt-25 mb-10">
-            <!-- Faixa cinza -->
-            <div
-                class="flex flex-col items-center justify-center gap-12 bg-[#F5F5F5] h-[386px] px-82">
-                <!-- Seções -->
-                <div class="flex items-start justify-between w-full text-sm">
-                    <!-- Links redes sociais -->
-                    <div class="flex flex-col items-center justify-between gap-4">
-                        <!-- Logo -->
-                        <img src="src/assets/logo-avanti.png" alt="" />
-                        <!-- Redes sociais -->
-                        <div class="flex w-full gap-4 mt-4 justify-between">
-                            <img src="src/assets/instagram.svg" alt="Logo do Instagram" />
-                            <img src="src/assets/facebook.svg" alt="Logo do Facebook" />
-                            <img src="src/assets/youtube-logo.svg" alt="Logo do YouTube" />
-                            <img
-                                src="src/assets/logo-tiktok-svgrepo-com.svg"
-                                alt="Logo do TikTok" />
-                        </div>
-                    </div>
-
-                    <!-- Institucional -->
-                    <div class="flex flex-col gap-2 text-sm">
-                        <h4 class="font-bold mb-3">Institucional</h4>
-                        <h5>Sobre Nós</h5>
-                        <h5>Nossas Lojas</h5>
-                        <h5>Privacidade e Segurança</h5>
-                        <h5>Termos e Condições</h5>
-                    </div>
-
-                    <!-- Central de Ajuda -->
-                    <div class="flex flex-col gap-2 text-sm">
-                        <h4 class="font-bold mb-3">Central de Ajuda</h4>
-                        <h5>Fale Conosco</h5>
-                        <h5>Frete e Entrega</h5>
-                        <h5>Trocas e Devoluções</h5>
-                        <h5>Formas de Pagamento</h5>
-                        <h5>FAQ</h5>
-                    </div>
-
-                    <!-- Atendimento -->
-                    <div class="flex flex-col gap-2 text-sm">
-                        <h4 class="font-bold mb-3">Atendimento</h4>
-                        <h5>
-                            <span class="font-bold text-[#303030]">Telefone: </span>(00) 1234-5678
-                        </h5>
-                        <h5>
-                            <span class="font-bold text-[#303030]">E-mail: </span>
-                            exemplo@exemplo.com.br
-                        </h5>
-                        <h5>
-                            <span class="font-bold text-[#303030]"
-                                >Horário de atendimento: <br />
-                            </span>
-                            Segunda a Sábado: 07h00 às 23h00 <br />
-                            Domingos e Feriados: 07h00 às 21h00
-                        </h5>
-                    </div>
-                </div>
-
-                <!-- Ícones -->
-                <div class="flex items-center gap-10">
-                    <a href="#"
-                        ><img src="src/assets/formas-pagamento/amex.svg" alt="Logo Amex"
-                    /></a>
-                    <a href="#"
-                        ><img
-                            src="src/assets/formas-pagamento/mastercard.svg"
-                            alt="Logo Mastercard"
-                    /></a>
-                    <a href="#"
-                        ><img src="src/assets/formas-pagamento/visa.svg" alt="Logo Visa"
-                    /></a>
-                    <a href="#"
-                        ><img src="src/assets/formas-pagamento/hipercard.svg" alt="Logo Hipercard"
-                    /></a>
-                    <a href="#"><img src="src/assets/formas-pagamento/elo.svg" alt="Logo Elo" /></a>
-                    <a href="#"
-                        ><img src="src/assets/formas-pagamento/diners.svg" alt="Logo Diners"
-                    /></a>
-                    <a href="#"
-                        ><img
-                            src="src/assets/formas-pagamento/paypal-seeklogo.com.svg"
-                            alt="Logo Paypal"
-                    /></a>
-                    <a href="#"><img src="src/assets/formas-pagamento/pix.svg" alt="Logo Pix" /></a>
-                    <a href="#"
-                        ><img src="src/assets/formas-pagamento/boleto.svg" alt="Logo Boleto"
-                    /></a>
-                </div>
+        <div
+          class="flex max-h-[409px] max-w-[238px] flex-col items-center justify-center rounded-[10px] border border-[#DDDDDD] p-4"
+        >
+          <img
+            src="src/assets/foto-carrossel.png"
+            alt="Imagem do produto"
+            class="product-img"
+          />
+          <h3 class="text-ms product-title mt-2 self-start">
+            Lorem ipsum dolor sit amet consectetuer adipiscing elit
+          </h3>
+          <div class="mt-1 flex items-center gap-2 self-start">
+            <div>
+              <p
+                class="product-original-price self-start text-xs text-[#303030] line-through"
+              >
+                R$100,00
+              </p>
+              <p class="product-price self-start text-base font-bold">
+                R$79,90
+              </p>
             </div>
+            <p
+              class="product-discount m-auto rounded-[4px] bg-[#5EC0BE] px-2 py-1 text-xs text-white underline"
+            >
+              10%OFF
+            </p>
+          </div>
+          <p class="mt-1 self-start text-[12px]">
+            Ou em até
+            <span class="product-installment font-bold">10x de R$7,90</span>
+          </p>
+          <button
+            class="mt-4 h-10 w-full rounded-[10px] bg-[#005CFF] px-6 py-2.5 font-bold text-white hover:bg-[#0026ff]"
+          >
+            Comprar
+          </button>
+        </div>
 
-            <!-- Faixa branca -->
-            <div class="flex flex-col px-82 items-center mt-10 gap-8">
-                <p class="w-[1074px] text-center text-xs">
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-                    euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad
-                    minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut
-                    aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in
-                    vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla
-                    facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent
-                    luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
-                </p>
-                <!-- Ícones -->
-                <div class="flex gap-6 items-center justify-center">
-                    <a href=""><img src="src/assets/certificados/let-s-encrypt.svg" alt="" /></a>
-                    <a href=""><img src="src/assets/certificados/vtex-pci-200.svg" alt="" /></a>
-                    <a href=""><img src="src/assets/logo-avanti.png" alt="" class="max-h-2.5" /></a>
-                    <a href=""><img src="src/assets/certificados/VTEX_Logo.svg" alt="" /></a>
-                </div>
+        <div
+          class="flex max-h-[409px] max-w-[238px] flex-col items-center justify-center rounded-[10px] border border-[#DDDDDD] p-4"
+        >
+          <img
+            src="src/assets/foto-carrossel.png"
+            alt="Imagem do produto"
+            class="product-img"
+          />
+          <h3 class="text-ms product-title mt-2 self-start">
+            Lorem ipsum dolor sit amet consectetuer adipiscing elit
+          </h3>
+          <div class="mt-1 flex items-center gap-2 self-start">
+            <div>
+              <p
+                class="product-original-price self-start text-xs text-[#303030] line-through"
+              >
+                R$100,00
+              </p>
+              <p class="product-price self-start text-base font-bold">
+                R$79,90
+              </p>
             </div>
-        </footer>
+            <p
+              class="product-discount m-auto rounded-[4px] bg-[#5EC0BE] px-2 py-1 text-xs text-white underline"
+            >
+              10%OFF
+            </p>
+          </div>
+          <p class="mt-1 self-start text-[12px]">
+            Ou em até
+            <span class="product-installment font-bold">10x de R$7,90</span>
+          </p>
+          <button
+            class="mt-4 h-10 w-full rounded-[10px] bg-[#005CFF] px-6 py-2.5 font-bold text-white hover:bg-[#0026ff]"
+          >
+            Comprar
+          </button>
+        </div>
 
-        <script type="module" src="/src/main.js"></script>
-    </body>
+        <div
+          class="flex max-h-[409px] max-w-[238px] flex-col items-center justify-center rounded-[10px] border border-[#DDDDDD] p-4"
+        >
+          <img
+            src="src/assets/foto-carrossel.png"
+            alt="Imagem do produto"
+            class="product-img"
+          />
+          <h3 class="text-ms product-title mt-2 self-start">
+            Lorem ipsum dolor sit amet consectetuer adipiscing elit
+          </h3>
+          <div class="mt-1 flex items-center gap-2 self-start">
+            <div>
+              <p
+                class="product-original-price self-start text-xs text-[#303030] line-through"
+              >
+                R$100,00
+              </p>
+              <p class="product-price self-start text-base font-bold">
+                R$79,90
+              </p>
+            </div>
+            <p
+              class="product-discount m-auto rounded-[4px] bg-[#5EC0BE] px-2 py-1 text-xs text-white underline"
+            >
+              10%OFF
+            </p>
+          </div>
+          <p class="mt-1 self-start text-[12px]">
+            Ou em até
+            <span class="product-installment font-bold">10x de R$7,90</span>
+          </p>
+          <button
+            class="mt-4 h-10 w-full rounded-[10px] bg-[#005CFF] px-6 py-2.5 font-bold text-white hover:bg-[#0026ff]"
+          >
+            Comprar
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Foto caneca -->
+    <section class="mt-30 flex items-center justify-between gap-8 px-82">
+      <!-- Lado imagem -->
+      <div
+        class="flex h-[747px] w-[650px] shrink-0 items-center justify-center bg-[#C2C2C2]"
+      >
+        <img src="/src/assets/caneca.png" alt="" />
+      </div>
+      <!-- Lado texto -->
+      <div class="flex w-[530px] flex-col justify-center text-left">
+        <h1 class="text-3xl font-bold">LOREM IPSUM</h1>
+        <p class="mt-6 text-lg">
+          Duis consectetur metus nec lacus auctor dignissim. Mauris vitae
+          finibus dui. Mauris laoreet lacus ut eleifend viverra. Cras efficitur
+          volutpat dui, in lobortis metus lacinia sit amet. Sed lacinia pharetra
+          magna, vel pulvinar ligula hendrerit a. Maecenas fringilla porttitor
+          tortor eget lacinia. Donec sollicitudin euismod orci, auctor fringilla
+          magna consequat interdum. Fusce sagittis elit a libero commodo egestas
+          efficitur id augue.
+        </p>
+        <br />
+        <p class="mt-5 text-lg">
+          Duis consectetur metus nec lacus auctor dignissim. Mauris vitae
+          finibus dui. Mauris laoreet lacus ut eleifend viverra. Cras efficitur
+          volutpat dui, in lobortis metus lacinia sit amet. Sed lacinia pharetra
+          magna, vel pulvinar ligula hendrerit a. Maecenas fringilla porttitor
+          tortor eget lacinia. Donec sollicitudin euismod orci, auctor fringilla
+          magna consequat interdum. Fusce sagittis elit a libero commodo egestas
+          efficitur id augue.
+        </p>
+      </div>
+    </section>
+
+    <!-- Foto caneca 2 -->
+    <section
+      class="mt-30 flex items-center justify-between gap-20 bg-[#DEDEDE] px-82 py-11"
+    >
+      <!-- Lado texto -->
+      <div class="flex flex-col items-center justify-center gap-16">
+        <h1 class="text-3xl font-bold text-[#4F4F4F]">LOREM IMPSUM</h1>
+
+        <div class="flex gap-5">
+          <img src="src/assets/Circulo e Icone.svg" alt="" class="w-24" />
+          <p class="w-[360px] text-lg text-[#4F4F4F]">
+            Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
+            montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
+            pellentesque eu, pretium quis, sem.
+          </p>
+        </div>
+        <div class="flex gap-5">
+          <img src="src/assets/Circulo e Icone.svg" alt="" class="w-24" />
+          <p class="w-[360px] text-lg text-[#4F4F4F]">
+            Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
+            montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
+            pellentesque eu, pretium quis, sem.
+          </p>
+        </div>
+        <div class="flex gap-5">
+          <img src="src/assets/Circulo e Icone.svg" alt="" class="w-24" />
+          <p class="w-[360px] text-lg text-[#4F4F4F]">
+            Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
+            montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
+            pellentesque eu, pretium quis, sem.
+          </p>
+        </div>
+      </div>
+      <!-- Lado imagem -->
+      <img
+        src="src/assets/caneca2.png"
+        alt=""
+        class="h-[728px] w-[652px] object-cover"
+      />
+    </section>
+
+    <!-- Foto caneca -->
+    <section class="mt-30 flex items-center justify-between gap-8 px-82">
+      <!-- Lado imagem -->
+      <div
+        class="flex h-[747px] w-[650px] shrink-0 items-center justify-center bg-[#C2C2C2]"
+      >
+        <img src="/src/assets/caneca.png" alt="" />
+      </div>
+      <!-- Lado texto -->
+      <div class="flex w-[530px] flex-col justify-center text-left">
+        <h1 class="text-3xl font-bold">LOREM IPSUM</h1>
+        <p class="mt-6 text-lg">
+          Duis consectetur metus nec lacus auctor dignissim. Mauris vitae
+          finibus dui. Mauris laoreet lacus ut eleifend viverra. Cras efficitur
+          volutpat dui, in lobortis metus lacinia sit amet. Sed lacinia pharetra
+          magna, vel pulvinar ligula hendrerit a. Maecenas fringilla porttitor
+          tortor eget lacinia. Donec sollicitudin euismod orci, auctor fringilla
+          magna consequat interdum. Fusce sagittis elit a libero commodo egestas
+          efficitur id augue.
+        </p>
+        <br />
+        <p class="mt-5 text-lg">
+          Duis consectetur metus nec lacus auctor dignissim. Mauris vitae
+          finibus dui. Mauris laoreet lacus ut eleifend viverra. Cras efficitur
+          volutpat dui, in lobortis metus lacinia sit amet. Sed lacinia pharetra
+          magna, vel pulvinar ligula hendrerit a. Maecenas fringilla porttitor
+          tortor eget lacinia. Donec sollicitudin euismod orci, auctor fringilla
+          magna consequat interdum. Fusce sagittis elit a libero commodo egestas
+          efficitur id augue.
+        </p>
+      </div>
+    </section>
+
+    <!-- Carrosel -->
+    <section
+      class="mt-25 flex flex-col items-center justify-center gap-4 px-82"
+    >
+      <!-- Lançamentos + ver mais -->
+      <div class="flex w-full justify-between">
+        <p class="text-xl font-bold">Lançamentos</p>
+        <a href="#" class="text-sm font-bold hover:text-[#005CFF]">Ver mais</a>
+      </div>
+
+      <!-- Imagens -->
+      <div class="flex w-full justify-between">
+        <div
+          class="flex max-h-[409px] max-w-[238px] flex-col items-center justify-center rounded-[10px] border border-[#DDDDDD] p-4"
+        >
+          <img
+            src="src/assets/foto-carrossel.png"
+            alt="Imagem do produto"
+            class="product-img"
+          />
+          <h3 class="text-ms product-title mt-2 self-start">
+            Lorem ipsum dolor sit amet consectetuer adipiscing elit
+          </h3>
+          <div class="mt-1 flex items-center gap-2 self-start">
+            <div>
+              <p
+                class="product-original-price self-start text-xs text-[#303030] line-through"
+              >
+                R$100,00
+              </p>
+              <p class="product-price self-start text-base font-bold">
+                R$79,90
+              </p>
+            </div>
+            <p
+              class="product-discount m-auto rounded-[4px] bg-[#5EC0BE] px-2 py-1 text-xs text-white underline"
+            >
+              10%OFF
+            </p>
+          </div>
+          <p class="mt-1 self-start text-[12px]">
+            Ou em até
+            <span class="product-installment font-bold">10x de R$7,90</span>
+          </p>
+          <button
+            class="mt-4 h-10 w-full rounded-[10px] bg-[#005CFF] px-6 py-2.5 font-bold text-white hover:bg-[#0026ff]"
+          >
+            Comprar
+          </button>
+        </div>
+
+        <div
+          class="flex max-h-[409px] max-w-[238px] flex-col items-center justify-center rounded-[10px] border border-[#DDDDDD] p-4"
+        >
+          <img
+            src="src/assets/foto-carrossel.png"
+            alt="Imagem do produto"
+            class="product-img"
+          />
+          <h3 class="text-ms product-title mt-2 self-start">
+            Lorem ipsum dolor sit amet consectetuer adipiscing elit
+          </h3>
+          <div class="mt-1 flex items-center gap-2 self-start">
+            <div>
+              <p
+                class="product-original-price self-start text-xs text-[#303030] line-through"
+              >
+                R$100,00
+              </p>
+              <p class="product-price self-start text-base font-bold">
+                R$79,90
+              </p>
+            </div>
+            <p
+              class="product-discount m-auto rounded-[4px] bg-[#5EC0BE] px-2 py-1 text-xs text-white underline"
+            >
+              10%OFF
+            </p>
+          </div>
+          <p class="mt-1 self-start text-[12px]">
+            Ou em até
+            <span class="product-installment font-bold">10x de R$7,90</span>
+          </p>
+          <button
+            class="mt-4 h-10 w-full rounded-[10px] bg-[#005CFF] px-6 py-2.5 font-bold text-white hover:bg-[#0026ff]"
+          >
+            Comprar
+          </button>
+        </div>
+
+        <div
+          class="flex max-h-[409px] max-w-[238px] flex-col items-center justify-center rounded-[10px] border border-[#DDDDDD] p-4"
+        >
+          <img
+            src="src/assets/foto-carrossel.png"
+            alt="Imagem do produto"
+            class="product-img"
+          />
+          <h3 class="text-ms product-title mt-2 self-start">
+            Lorem ipsum dolor sit amet consectetuer adipiscing elit
+          </h3>
+          <div class="mt-1 flex items-center gap-2 self-start">
+            <div>
+              <p
+                class="product-original-price self-start text-xs text-[#303030] line-through"
+              >
+                R$100,00
+              </p>
+              <p class="product-price self-start text-base font-bold">
+                R$79,90
+              </p>
+            </div>
+            <p
+              class="product-discount m-auto rounded-[4px] bg-[#5EC0BE] px-2 py-1 text-xs text-white underline"
+            >
+              10%OFF
+            </p>
+          </div>
+          <p class="mt-1 self-start text-[12px]">
+            Ou em até
+            <span class="product-installment font-bold">10x de R$7,90</span>
+          </p>
+          <button
+            class="mt-4 h-10 w-full rounded-[10px] bg-[#005CFF] px-6 py-2.5 font-bold text-white hover:bg-[#0026ff]"
+          >
+            Comprar
+          </button>
+        </div>
+
+        <div
+          class="flex max-h-[409px] max-w-[238px] flex-col items-center justify-center rounded-[10px] border border-[#DDDDDD] p-4"
+        >
+          <img
+            src="src/assets/foto-carrossel.png"
+            alt="Imagem do produto"
+            class="product-img"
+          />
+          <h3 class="text-ms product-title mt-2 self-start">
+            Lorem ipsum dolor sit amet consectetuer adipiscing elit
+          </h3>
+          <div class="mt-1 flex items-center gap-2 self-start">
+            <div>
+              <p
+                class="product-original-price self-start text-xs text-[#303030] line-through"
+              >
+                R$100,00
+              </p>
+              <p class="product-price self-start text-base font-bold">
+                R$79,90
+              </p>
+            </div>
+            <p
+              class="product-discount m-auto rounded-[4px] bg-[#5EC0BE] px-2 py-1 text-xs text-white underline"
+            >
+              10%OFF
+            </p>
+          </div>
+          <p class="mt-1 self-start text-[12px]">
+            Ou em até
+            <span class="product-installment font-bold">10x de R$7,90</span>
+          </p>
+          <button
+            class="mt-4 h-10 w-full rounded-[10px] bg-[#005CFF] px-6 py-2.5 font-bold text-white hover:bg-[#0026ff]"
+          >
+            Comprar
+          </button>
+        </div>
+
+        <div
+          class="flex max-h-[409px] max-w-[238px] flex-col items-center justify-center rounded-[10px] border border-[#DDDDDD] p-4"
+        >
+          <img
+            src="src/assets/foto-carrossel.png"
+            alt="Imagem do produto"
+            class="product-img"
+          />
+          <h3 class="text-ms product-title mt-2 self-start">
+            Lorem ipsum dolor sit amet consectetuer adipiscing elit
+          </h3>
+          <div class="mt-1 flex items-center gap-2 self-start">
+            <div>
+              <p
+                class="product-original-price self-start text-xs text-[#303030] line-through"
+              >
+                R$100,00
+              </p>
+              <p class="product-price self-start text-base font-bold">
+                R$79,90
+              </p>
+            </div>
+            <p
+              class="product-discount m-auto rounded-[4px] bg-[#5EC0BE] px-2 py-1 text-xs text-white underline"
+            >
+              10%OFF
+            </p>
+          </div>
+          <p class="mt-1 self-start text-[12px]">
+            Ou em até
+            <span class="product-installment font-bold">10x de R$7,90</span>
+          </p>
+          <button
+            class="mt-4 h-10 w-full rounded-[10px] bg-[#005CFF] px-6 py-2.5 font-bold text-white hover:bg-[#0026ff]"
+          >
+            Comprar
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Banner 2 -->
+    <section
+      class="mt-25 flex h-[660px] w-screen items-center justify-center bg-[url('/src/assets/imagem-banner.png')] bg-cover bg-center"
+    >
+      <div
+        class="flex h-[132px] w-screen items-center justify-center bg-[#005CFF] text-white"
+      >
+        <p class="text-3xl">
+          Entre em contato conosco e verifique a disponibilidade para sua
+          região!
+        </p>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="mt-12 flex flex-col items-center justify-center gap-10">
+      <p class="text-xl font-bold">
+        Cadastre-se na nossa <span class="text-[#005CFF]">newsletter</span>
+      </p>
+      <div
+        class="flex h-[176px] w-[1260px] items-center justify-center gap-6 rounded-lg bg-[#DEDEDE]"
+      >
+        <input
+          type="text"
+          placeholder="Digite seu nome"
+          class="placeholder:sm h-12 w-70 rounded-lg bg-white px-4 placeholder-[#303030]"
+        />
+        <input
+          type="email"
+          placeholder="Digite seu e-mail"
+          class="placeholder:sm h-12 w-70 rounded-lg bg-white px-4 placeholder-[#303030]"
+        />
+
+        <div class="flex items-center justify-center gap-2">
+          <input type="checkbox" id="terms" class="rounded-sm" />
+          <label for="terms" class="text-xs text-[#656565]">
+            Estou de acordo com a
+            <a href="#" class="underline">Política de Privacidade</a>
+          </label>
+        </div>
+
+        <input
+          type="submit"
+          value="Cadastrar"
+          class="cursor-pointer rounded-lg bg-[#005CFF] px-6 py-3.5 text-base font-bold text-white"
+        />
+      </div>
+    </section>
+
+    <footer class="mt-25 mb-10">
+      <!-- Faixa cinza -->
+      <div
+        class="flex h-[386px] flex-col items-center justify-center gap-12 bg-[#F5F5F5] px-82"
+      >
+        <!-- Seções -->
+        <div class="flex w-full items-start justify-between text-sm">
+          <!-- Links redes sociais -->
+          <div class="flex flex-col items-center justify-between gap-4">
+            <!-- Logo -->
+            <img src="src/assets/logo-avanti.png" alt="" />
+            <!-- Redes sociais -->
+            <div class="mt-4 flex w-full justify-between gap-4">
+              <img src="src/assets/instagram.svg" alt="Logo do Instagram" />
+              <img src="src/assets/facebook.svg" alt="Logo do Facebook" />
+              <img src="src/assets/youtube-logo.svg" alt="Logo do YouTube" />
+              <img
+                src="src/assets/logo-tiktok-svgrepo-com.svg"
+                alt="Logo do TikTok"
+              />
+            </div>
+          </div>
+
+          <!-- Institucional -->
+          <div class="flex flex-col gap-2 text-sm">
+            <h4 class="mb-3 font-bold">Institucional</h4>
+            <h5>Sobre Nós</h5>
+            <h5>Nossas Lojas</h5>
+            <h5>Privacidade e Segurança</h5>
+            <h5>Termos e Condições</h5>
+          </div>
+
+          <!-- Central de Ajuda -->
+          <div class="flex flex-col gap-2 text-sm">
+            <h4 class="mb-3 font-bold">Central de Ajuda</h4>
+            <h5>Fale Conosco</h5>
+            <h5>Frete e Entrega</h5>
+            <h5>Trocas e Devoluções</h5>
+            <h5>Formas de Pagamento</h5>
+            <h5>FAQ</h5>
+          </div>
+
+          <!-- Atendimento -->
+          <div class="flex flex-col gap-2 text-sm">
+            <h4 class="mb-3 font-bold">Atendimento</h4>
+            <h5>
+              <span class="font-bold text-[#303030]">Telefone: </span>(00)
+              1234-5678
+            </h5>
+            <h5>
+              <span class="font-bold text-[#303030]">E-mail: </span>
+              exemplo@exemplo.com.br
+            </h5>
+            <h5>
+              <span class="font-bold text-[#303030]"
+                >Horário de atendimento: <br />
+              </span>
+              Segunda a Sábado: 07h00 às 23h00 <br />
+              Domingos e Feriados: 07h00 às 21h00
+            </h5>
+          </div>
+        </div>
+
+        <!-- Ícones -->
+        <div class="flex items-center gap-10">
+          <a href="#"
+            ><img src="src/assets/formas-pagamento/amex.svg" alt="Logo Amex"
+          /></a>
+          <a href="#"
+            ><img
+              src="src/assets/formas-pagamento/mastercard.svg"
+              alt="Logo Mastercard"
+          /></a>
+          <a href="#"
+            ><img src="src/assets/formas-pagamento/visa.svg" alt="Logo Visa"
+          /></a>
+          <a href="#"
+            ><img
+              src="src/assets/formas-pagamento/hipercard.svg"
+              alt="Logo Hipercard"
+          /></a>
+          <a href="#"
+            ><img src="src/assets/formas-pagamento/elo.svg" alt="Logo Elo"
+          /></a>
+          <a href="#"
+            ><img
+              src="src/assets/formas-pagamento/diners.svg"
+              alt="Logo Diners"
+          /></a>
+          <a href="#"
+            ><img
+              src="src/assets/formas-pagamento/paypal-seeklogo.com.svg"
+              alt="Logo Paypal"
+          /></a>
+          <a href="#"
+            ><img src="src/assets/formas-pagamento/pix.svg" alt="Logo Pix"
+          /></a>
+          <a href="#"
+            ><img
+              src="src/assets/formas-pagamento/boleto.svg"
+              alt="Logo Boleto"
+          /></a>
+        </div>
+      </div>
+
+      <!-- Faixa branca -->
+      <div class="mt-10 flex flex-col items-center gap-8 px-82">
+        <p class="w-[1074px] text-center text-xs">
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+          nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+          volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+          ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+          Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
+          molestie consequat, vel illum dolore eu feugiat nulla facilisis at
+          vero eros et accumsan et iusto odio dignissim qui blandit praesent
+          luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+        </p>
+        <!-- Ícones -->
+        <div class="flex items-center justify-center gap-6">
+          <a href=""
+            ><img src="src/assets/certificados/let-s-encrypt.svg" alt=""
+          /></a>
+          <a href=""
+            ><img src="src/assets/certificados/vtex-pci-200.svg" alt=""
+          /></a>
+          <a href=""
+            ><img src="src/assets/logo-avanti.png" alt="" class="max-h-2.5"
+          /></a>
+          <a href=""
+            ><img src="src/assets/certificados/VTEX_Logo.svg" alt=""
+          /></a>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
 </html>

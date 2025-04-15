@@ -3,35 +3,67 @@ import Swiper from "swiper";
 
 const categories = [
     {
-        name: "Eletrônicos",
+        name: "Departamento",
         subcategories: [
-            { name: "Smartphones", items: ["iPhones", "Android", "Acessórios"] },
-            { name: "Computadores", items: ["Notebooks", "Desktops", "Monitores"] },
-            { name: "Áudio", items: ["Fones", "Caixas de som", "Microfones"] },
+            { name: "Categoria", items: ["Categoria", "Categoria", "Categoria"] },
+            { name: "Categoria", items: ["Categoria", "Categoria", "Categoria"] },
+            { name: "Categoria", items: ["Categoria", "Categoria", "Categoria"] },
         ],
     },
     {
-        name: "Moda",
+        name: "Departamento",
         subcategories: [
-            { name: "Masculina", items: ["Camisetas", "Calças", "Calçados"] },
-            { name: "Feminina", items: ["Vestidos", "Blusas", "Calçados"] },
-            { name: "Infantil", items: ["Bebê", "Meninos", "Meninas"] },
+            { name: "Categoria", items: ["Categoria", "Categoria", "Categoria"] },
+            { name: "Categoria", items: ["Categoria", "Categoria", "Categoria"] },
+            { name: "Categoria", items: ["Categoria", "Categoria", "Categoria"] },
         ],
     },
     {
-        name: "Casa e Decoração",
+        name: "Departamento",
         subcategories: [
-            { name: "Sala", items: ["Sofás", "Mesas", "Decoração"] },
-            { name: "Cozinha", items: ["Panelas", "Utensílios", "Louças"] },
-            { name: "Quarto", items: ["Camas", "Colchões", "Roupas de cama"] },
+            { name: "Categoria", items: ["Categoria", "Categoria", "Categoria"] },
+            { name: "Categoria", items: ["Categoria", "Categoria", "Categoria"] },
+            { name: "Categoria", items: ["Categoria", "Categoria", "Categoria"] },
         ],
     },
     {
-        name: "Esportes",
+        name: "Departamento",
         subcategories: [
-            { name: "Futebol", items: ["Chuteiras", "Bolas", "Uniformes"] },
-            { name: "Academia", items: ["Equipamentos", "Roupas", "Suplementos"] },
-            { name: "Natação", items: ["Maiôs", "Óculos", "Acessórios"] },
+            { name: "Categoria", items: ["Categoria", "Categoria", "Categoria"] },
+            { name: "Categoria", items: ["Categoria", "Categoria", "Categoria"] },
+            { name: "Categoria", items: ["Categoria", "Categoria", "Categoria"] },
+        ],
+    },
+    {
+        name: "Departamento",
+        subcategories: [
+            { name: "Categoria", items: ["Categoria", "Categoria", "Categoria"] },
+            { name: "Categoria", items: ["Categoria", "Categoria", "Categoria"] },
+            { name: "Categoria", items: ["Categoria", "Categoria", "Categoria"] },
+        ],
+    },
+    {
+        name: "Departamento",
+        subcategories: [
+            { name: "Categoria", items: ["Categoria", "Categoria", "Categoria"] },
+            { name: "Categoria", items: ["Categoria", "Categoria", "Categoria"] },
+            { name: "Categoria", items: ["Categoria", "Categoria", "Categoria"] },
+        ],
+    },
+    {
+        name: "Departamento",
+        subcategories: [
+            { name: "Categoria", items: ["Categoria", "Categoria", "Categoria"] },
+            { name: "Categoria", items: ["Categoria", "Categoria", "Categoria"] },
+            { name: "Categoria", items: ["Categoria", "Categoria", "Categoria"] },
+        ],
+    },
+    {
+        name: "Departamento",
+        subcategories: [
+            { name: "Categoria", items: ["Categoria", "Categoria", "Categoria"] },
+            { name: "Categoria", items: ["Categoria", "Categoria", "Categoria"] },
+            { name: "Categoria", items: ["Categoria", "Categoria", "Categoria"] },
         ],
     },
 ];
