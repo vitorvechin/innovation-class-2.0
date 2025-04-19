@@ -1,4 +1,63 @@
 import './style.css'
+import Swiper from 'swiper'
+import { Navigation, Pagination, Autoplay } from 'swiper/modules'
+
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+import 'swiper/css/autoplay'
+
+// Cards de produtos
+const products = [
+    {
+        image: '/src/assets/foto-carrossel.png',
+        title: 'Lorem ipsum dolor sit amet consectetuer adipiscing elit',
+        originalPrice: 'R$ 100,00',
+        price: 'R$79,90',
+        discount: '20% OFF',
+        installment: '10x de R$ 7,90',
+    },
+    {
+        image: '/src/assets/foto-carrossel.png',
+        title: 'Lorem ipsum dolor sit amet consectetuer adipiscing elit',
+        originalPrice: 'R$ 100,00',
+        price: 'R$79,90',
+        discount: '20% OFF',
+        installment: '10x de R$ 7,90',
+    },
+    {
+        image: '/src/assets/foto-carrossel.png',
+        title: 'Lorem ipsum dolor sit amet consectetuer adipiscing elit',
+        originalPrice: 'R$ 100,00',
+        price: 'R$79,90',
+        discount: '20% OFF',
+        installment: '10x de R$ 7,90',
+    },
+    {
+        image: '/src/assets/foto-carrossel.png',
+        title: 'Lorem ipsum dolor sit amet consectetuer adipiscing elit',
+        originalPrice: 'R$ 100,00',
+        price: 'R$79,90',
+        discount: '20% OFF',
+        installment: '10x de R$ 7,90',
+    },
+    {
+        image: '/src/assets/foto-carrossel.png',
+        title: 'Lorem ipsum dolor sit amet consectetuer adipiscing elit',
+        originalPrice: 'R$ 100,00',
+        price: 'R$79,90',
+        discount: '20% OFF',
+        installment: '10x de R$ 7,90',
+    },
+    {
+        image: '/src/assets/foto-carrossel.png',
+        title: 'Lorem ipsum dolor sit amet consectetuer adipiscing elit',
+        originalPrice: 'R$ 100,00',
+        price: 'R$79,90',
+        discount: '20% OFF',
+        installment: '10x de R$ 7,90',
+    },
+]
 
 const categories = [
     {
@@ -140,8 +199,63 @@ const categories = [
 ]
 
 document.addEventListener('DOMContentLoaded', function () {
-
     console.log('DOM fully loaded and parsed')
+
+    const template = document.getElementById('product-card')
+
+    // Seleciona todos os carrosséis na página
+    const allSwipers = document.querySelectorAll('.swiper')
+
+    allSwipers.forEach((swiperContainer) => {
+        const swiperWrapper = swiperContainer.querySelector('.swiper-wrapper')
+
+        products.forEach((product) => {
+            const cardContent = document.importNode(template.content, true)
+            const cardElement = cardContent.firstElementChild
+            cardElement.classList.add('swiper-slide')
+
+            // Preencher os dados
+            cardElement.querySelector('.product-img').src = product.image
+            cardElement.querySelector('.product-title').textContent =
+                product.title
+            cardElement.querySelector('.product-original-price').textContent =
+                product.originalPrice
+            cardElement.querySelector('.product-price').textContent =
+                product.price
+            cardElement.querySelector('.product-discount').textContent =
+                product.discount
+            cardElement.querySelector('.product-installment').textContent =
+                product.installment
+
+            swiperWrapper.appendChild(cardElement)
+        })
+
+        // Inicializa o Swiper individualmente
+        new Swiper(swiperContainer, {
+            modules: [Navigation, Pagination, Autoplay],
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: swiperContainer.querySelector(
+                    '.custom-swiper-button-next',
+                ),
+                prevEl: swiperContainer.querySelector(
+                    '.custom-swiper-button-prev',
+                ),
+            },
+            pagination: {
+                el: swiperContainer.querySelector('.swiper-pagination'),
+                clickable: true,
+            },
+            slidesPerView: 'auto',
+            spaceBetween: 16,
+        })
+    })
+
+    // Menu dropdown
 
     const menuTrigger = document.getElementById('menu-trigger')
     const megamenu = document.getElementById('megamenu')

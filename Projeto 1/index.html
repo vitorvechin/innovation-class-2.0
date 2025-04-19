@@ -6,6 +6,7 @@
         <title>Projeto 1</title>
     </head>
     <body class="bg-white">
+        <!-- Responsividade ok -->
         <header
             class="sticky top-0 z-100 flex flex-col items-center justify-center"
         >
@@ -296,24 +297,37 @@
         <!-- Template do card -->
         <template id="product-card">
             <div
-                class="flex max-h-[409px] max-w-[238px] flex-col items-center justify-center rounded-[10px] border border-[#DDDDDD] p-4"
+                class="swiper-slide flex max-w-60 flex-col items-center justify-center rounded-[10px] border border-[#DDDDDD] p-4"
             >
-                <img src="" alt="Imagem do produto" class="product-img" />
-                <h3 class="text-ms product-title mt-2 self-start"></h3>
-                <div class="mt-1 flex items-center gap-2 self-start">
-                    <div>
+                <div class="relative w-full">
+                    <span
+                        class="absolute top-0 left-0 rounded bg-[#00264E] px-2 py-1 text-[10px] font-bold text-white"
+                    >
+                        NOVO
+                    </span>
+                    <img
+                        src=""
+                        alt="Imagem do produto"
+                        class="product-img h-auto w-full object-contain"
+                    />
+                </div>
+                <h3
+                    class="text-ms product-title mt-2 w-full self-start"
+                ></h3>
+                <div class="mt-1 flex w-full items-center gap-2 self-start">
+                    <div class="min-w-0 flex-1">
                         <p
-                            class="product-original-price self-start text-xs text-[#303030] line-through"
+                            class="product-original-price self-start truncate text-xs text-[#303030] line-through"
                         ></p>
                         <p
-                            class="product-price self-start text-base font-bold"
+                            class="product-price self-start truncate text-base font-bold"
                         ></p>
                     </div>
                     <p
-                        class="product-discount m-auto rounded-[4px] bg-[#5EC0BE] px-2 py-1 text-xs text-white underline"
+                        class="product-discount flex-shrink-0 rounded-[4px] bg-[#5EC0BE] px-2 py-1 text-xs text-white underline"
                     ></p>
                 </div>
-                <p class="mt-1 self-start text-[12px]">
+                <p class="mt-1 w-full self-start text-[12px]">
                     Ou em até
                     <span class="product-installment font-bold"></span>
                 </p>
@@ -325,244 +339,40 @@
             </div>
         </template>
 
+        
         <!-- Carrosel -->
         <section
-            class="mt-25 flex flex-col items-center justify-center gap-4 px-82"
+            class="mt-25 flex flex-col gap-4 px-4 md:px-8 lg:px-16 2xl:px-82"
         >
-            <!-- Lançamentos + ver mais -->
+            <!-- Cabeçalho -->
             <div class="flex w-full justify-between">
-                <p class="text-xl font-bold">Lançamentos</p>
+                <h2 class="text-xl font-bold">Lançamentos</h2>
                 <a href="#" class="text-sm font-bold hover:text-[#005CFF]"
                     >Ver mais</a
                 >
             </div>
 
-            <!-- Imagens -->
-            <div class="flex w-full justify-between">
-                <div
-                    class="flex max-h-[409px] max-w-[238px] flex-col items-center justify-center rounded-[10px] border border-[#DDDDDD] p-4"
-                >
-                    <div class="relative w-full">
-                        <!-- Etiqueta NOVO -->
-                        <span
-                            class="absolute top-0 left-0 rounded bg-[#00264E] px-2 py-1 text-[10px] font-bold text-white"
-                        >
-                            NOVO
-                        </span>
-
-                        <!-- Imagem do produto -->
-                        <img
-                            src="src/assets/foto-carrossel.png"
-                            alt="Imagem do produto"
-                            class="product-img w-full"
-                        />
-                    </div>
-                    <h3 class="text-ms product-title mt-2 self-start">
-                        Lorem ipsum dolor sit amet consectetuer adipiscing elit
-                    </h3>
-                    <div class="mt-1 flex items-center gap-2 self-start">
-                        <div>
-                            <p
-                                class="product-original-price self-start text-xs text-[#303030] line-through"
-                            >
-                                R$100,00
-                            </p>
-                            <p
-                                class="product-price self-start text-base font-bold"
-                            >
-                                R$79,90
-                            </p>
-                        </div>
-                        <p
-                            class="product-discount m-auto rounded-[4px] bg-[#5EC0BE] px-2 py-1 text-xs text-white underline"
-                        >
-                            10%OFF
-                        </p>
-                    </div>
-                    <p class="mt-1 self-start text-[12px]">
-                        Ou em até
-                        <span class="product-installment font-bold"
-                            >10x de R$7,90</span
-                        >
-                    </p>
-                    <button
-                        class="mt-4 h-10 w-full rounded-[10px] bg-[#005CFF] px-6 py-2.5 font-bold text-white hover:bg-[#0026ff]"
-                    >
-                        Comprar
-                    </button>
+            <!-- Swiper main container -->
+            <div class="swiper relative flex w-full">
+                <!-- Additional wrapper -->
+                <div class="swiper-wrapper pb-12">
+                    <!-- Populado com JS -->
                 </div>
 
-                <div
-                    class="flex max-h-[409px] max-w-[238px] flex-col items-center justify-center rounded-[10px] border border-[#DDDDDD] p-4"
-                >
-                    <img
-                        src="src/assets/foto-carrossel.png"
-                        alt="Imagem do produto"
-                        class="product-img"
-                    />
-                    <h3 class="text-ms product-title mt-2 self-start">
-                        Lorem ipsum dolor sit amet consectetuer adipiscing elit
-                    </h3>
-                    <div class="mt-1 flex items-center gap-2 self-start">
-                        <div>
-                            <p
-                                class="product-original-price self-start text-xs text-[#303030] line-through"
-                            >
-                                R$100,00
-                            </p>
-                            <p
-                                class="product-price self-start text-base font-bold"
-                            >
-                                R$79,90
-                            </p>
-                        </div>
-                        <p
-                            class="product-discount m-auto rounded-[4px] bg-[#5EC0BE] px-2 py-1 text-xs text-white underline"
-                        >
-                            10%OFF
-                        </p>
-                    </div>
-                    <p class="mt-1 self-start text-[12px]">
-                        Ou em até
-                        <span class="product-installment font-bold"
-                            >10x de R$7,90</span
-                        >
-                    </p>
-                    <button
-                        class="mt-4 h-10 w-full rounded-[10px] bg-[#005CFF] px-6 py-2.5 font-bold text-white hover:bg-[#0026ff]"
-                    >
-                        Comprar
-                    </button>
-                </div>
+                <!-- Navegação -->
+                <img
+                    class="custom-swiper-button-prev absolute top-1/2 left-0 z-10 hidden -translate-y-1/2 transform cursor-pointer lg:flex"
+                    src="src/assets/seta-prev.svg"
+                    alt=""
+                />
+                <img
+                    class="custom-swiper-button-next absolute top-1/2 right-0 z-10 hidden -translate-y-1/2 transform cursor-pointer lg:flex"
+                    src="src/assets/seta-next.svg"
+                    alt=""
+                />
 
-                <div
-                    class="flex max-h-[409px] max-w-[238px] flex-col items-center justify-center rounded-[10px] border border-[#DDDDDD] p-4"
-                >
-                    <img
-                        src="src/assets/foto-carrossel.png"
-                        alt="Imagem do produto"
-                        class="product-img"
-                    />
-                    <h3 class="text-ms product-title mt-2 self-start">
-                        Lorem ipsum dolor sit amet consectetuer adipiscing elit
-                    </h3>
-                    <div class="mt-1 flex items-center gap-2 self-start">
-                        <div>
-                            <p
-                                class="product-original-price self-start text-xs text-[#303030] line-through"
-                            >
-                                R$100,00
-                            </p>
-                            <p
-                                class="product-price self-start text-base font-bold"
-                            >
-                                R$79,90
-                            </p>
-                        </div>
-                        <p
-                            class="product-discount m-auto rounded-[4px] bg-[#5EC0BE] px-2 py-1 text-xs text-white underline"
-                        >
-                            10%OFF
-                        </p>
-                    </div>
-                    <p class="mt-1 self-start text-[12px]">
-                        Ou em até
-                        <span class="product-installment font-bold"
-                            >10x de R$7,90</span
-                        >
-                    </p>
-                    <button
-                        class="mt-4 h-10 w-full rounded-[10px] bg-[#005CFF] px-6 py-2.5 font-bold text-white hover:bg-[#0026ff]"
-                    >
-                        Comprar
-                    </button>
-                </div>
-
-                <div
-                    class="flex max-h-[409px] max-w-[238px] flex-col items-center justify-center rounded-[10px] border border-[#DDDDDD] p-4"
-                >
-                    <img
-                        src="src/assets/foto-carrossel.png"
-                        alt="Imagem do produto"
-                        class="product-img"
-                    />
-                    <h3 class="text-ms product-title mt-2 self-start">
-                        Lorem ipsum dolor sit amet consectetuer adipiscing elit
-                    </h3>
-                    <div class="mt-1 flex items-center gap-2 self-start">
-                        <div>
-                            <p
-                                class="product-original-price self-start text-xs text-[#303030] line-through"
-                            >
-                                R$100,00
-                            </p>
-                            <p
-                                class="product-price self-start text-base font-bold"
-                            >
-                                R$79,90
-                            </p>
-                        </div>
-                        <p
-                            class="product-discount m-auto rounded-[4px] bg-[#5EC0BE] px-2 py-1 text-xs text-white underline"
-                        >
-                            10%OFF
-                        </p>
-                    </div>
-                    <p class="mt-1 self-start text-[12px]">
-                        Ou em até
-                        <span class="product-installment font-bold"
-                            >10x de R$7,90</span
-                        >
-                    </p>
-                    <button
-                        class="mt-4 h-10 w-full rounded-[10px] bg-[#005CFF] px-6 py-2.5 font-bold text-white hover:bg-[#0026ff]"
-                    >
-                        Comprar
-                    </button>
-                </div>
-
-                <div
-                    class="flex max-h-[409px] max-w-[238px] flex-col items-center justify-center rounded-[10px] border border-[#DDDDDD] p-4"
-                >
-                    <img
-                        src="src/assets/foto-carrossel.png"
-                        alt="Imagem do produto"
-                        class="product-img"
-                    />
-                    <h3 class="text-ms product-title mt-2 self-start">
-                        Lorem ipsum dolor sit amet consectetuer adipiscing elit
-                    </h3>
-                    <div class="mt-1 flex items-center gap-2 self-start">
-                        <div>
-                            <p
-                                class="product-original-price self-start text-xs text-[#303030] line-through"
-                            >
-                                R$100,00
-                            </p>
-                            <p
-                                class="product-price self-start text-base font-bold"
-                            >
-                                R$79,90
-                            </p>
-                        </div>
-                        <p
-                            class="product-discount m-auto rounded-[4px] bg-[#5EC0BE] px-2 py-1 text-xs text-white underline"
-                        >
-                            10%OFF
-                        </p>
-                    </div>
-                    <p class="mt-1 self-start text-[12px]">
-                        Ou em até
-                        <span class="product-installment font-bold"
-                            >10x de R$7,90</span
-                        >
-                    </p>
-                    <button
-                        class="mt-4 h-10 w-full rounded-[10px] bg-[#005CFF] px-6 py-2.5 font-bold text-white hover:bg-[#0026ff]"
-                    >
-                        Comprar
-                    </button>
-                </div>
+                <!-- Paginação -->
+                <div class="swiper-pagination"></div>
             </div>
         </section>
 
@@ -714,232 +524,37 @@
 
         <!-- Carrosel -->
         <section
-            class="mt-20 flex flex-col items-center justify-center gap-4 px-4 sm:px-12 md:px-24 lg:mt-25 lg:px-40 2xl:px-82"
+            class="mt-25 flex flex-col gap-4 px-4 md:px-8 lg:px-16 2xl:px-82"
         >
-            <!-- Lançamentos + ver mais -->
+            <!-- Cabeçalho -->
             <div class="flex w-full justify-between">
-                <p class="text-xl font-bold">Lançamentos</p>
+                <h2 class="text-xl font-bold">Lançamentos</h2>
                 <a href="#" class="text-sm font-bold hover:text-[#005CFF]"
                     >Ver mais</a
                 >
             </div>
 
-            <!-- Imagens -->
-            <div class="flex w-full justify-between">
-                <div
-                    class="flex max-h-[409px] max-w-[238px] flex-col items-center justify-center rounded-[10px] border border-[#DDDDDD] p-4"
-                >
-                    <img
-                        src="src/assets/foto-carrossel.png"
-                        alt="Imagem do produto"
-                        class="product-img"
-                    />
-                    <h3 class="text-ms product-title mt-2 self-start">
-                        Lorem ipsum dolor sit amet consectetuer adipiscing elit
-                    </h3>
-                    <div class="mt-1 flex items-center gap-2 self-start">
-                        <div>
-                            <p
-                                class="product-original-price self-start text-xs text-[#303030] line-through"
-                            >
-                                R$100,00
-                            </p>
-                            <p
-                                class="product-price self-start text-base font-bold"
-                            >
-                                R$79,90
-                            </p>
-                        </div>
-                        <p
-                            class="product-discount m-auto rounded-[4px] bg-[#5EC0BE] px-2 py-1 text-xs text-white underline"
-                        >
-                            10%OFF
-                        </p>
-                    </div>
-                    <p class="mt-1 self-start text-[12px]">
-                        Ou em até
-                        <span class="product-installment font-bold"
-                            >10x de R$7,90</span
-                        >
-                    </p>
-                    <button
-                        class="mt-4 h-10 w-full rounded-[10px] bg-[#005CFF] px-6 py-2.5 font-bold text-white hover:bg-[#0026ff]"
-                    >
-                        Comprar
-                    </button>
+            <!-- Swiper main container -->
+            <div class="swiper relative flex w-full">
+                <!-- Additional wrapper -->
+                <div class="swiper-wrapper pb-12">
+                    <!-- Populado com JS -->
                 </div>
 
-                <div
-                    class="flex max-h-[409px] max-w-[238px] flex-col items-center justify-center rounded-[10px] border border-[#DDDDDD] p-4"
-                >
-                    <img
-                        src="src/assets/foto-carrossel.png"
-                        alt="Imagem do produto"
-                        class="product-img"
-                    />
-                    <h3 class="text-ms product-title mt-2 self-start">
-                        Lorem ipsum dolor sit amet consectetuer adipiscing elit
-                    </h3>
-                    <div class="mt-1 flex items-center gap-2 self-start">
-                        <div>
-                            <p
-                                class="product-original-price self-start text-xs text-[#303030] line-through"
-                            >
-                                R$100,00
-                            </p>
-                            <p
-                                class="product-price self-start text-base font-bold"
-                            >
-                                R$79,90
-                            </p>
-                        </div>
-                        <p
-                            class="product-discount m-auto rounded-[4px] bg-[#5EC0BE] px-2 py-1 text-xs text-white underline"
-                        >
-                            10%OFF
-                        </p>
-                    </div>
-                    <p class="mt-1 self-start text-[12px]">
-                        Ou em até
-                        <span class="product-installment font-bold"
-                            >10x de R$7,90</span
-                        >
-                    </p>
-                    <button
-                        class="mt-4 h-10 w-full rounded-[10px] bg-[#005CFF] px-6 py-2.5 font-bold text-white hover:bg-[#0026ff]"
-                    >
-                        Comprar
-                    </button>
-                </div>
+                <!-- Navegação -->
+                <img
+                    class="custom-swiper-button-prev absolute top-1/2 left-0 z-10 hidden -translate-y-1/2 transform cursor-pointer lg:flex"
+                    src="src/assets/seta-prev.svg"
+                    alt=""
+                />
+                <img
+                    class="custom-swiper-button-next absolute top-1/2 right-0 z-10 hidden -translate-y-1/2 transform cursor-pointer lg:flex"
+                    src="src/assets/seta-next.svg"
+                    alt=""
+                />
 
-                <div
-                    class="flex max-h-[409px] max-w-[238px] flex-col items-center justify-center rounded-[10px] border border-[#DDDDDD] p-4"
-                >
-                    <img
-                        src="src/assets/foto-carrossel.png"
-                        alt="Imagem do produto"
-                        class="product-img"
-                    />
-                    <h3 class="text-ms product-title mt-2 self-start">
-                        Lorem ipsum dolor sit amet consectetuer adipiscing elit
-                    </h3>
-                    <div class="mt-1 flex items-center gap-2 self-start">
-                        <div>
-                            <p
-                                class="product-original-price self-start text-xs text-[#303030] line-through"
-                            >
-                                R$100,00
-                            </p>
-                            <p
-                                class="product-price self-start text-base font-bold"
-                            >
-                                R$79,90
-                            </p>
-                        </div>
-                        <p
-                            class="product-discount m-auto rounded-[4px] bg-[#5EC0BE] px-2 py-1 text-xs text-white underline"
-                        >
-                            10%OFF
-                        </p>
-                    </div>
-                    <p class="mt-1 self-start text-[12px]">
-                        Ou em até
-                        <span class="product-installment font-bold"
-                            >10x de R$7,90</span
-                        >
-                    </p>
-                    <button
-                        class="mt-4 h-10 w-full rounded-[10px] bg-[#005CFF] px-6 py-2.5 font-bold text-white hover:bg-[#0026ff]"
-                    >
-                        Comprar
-                    </button>
-                </div>
-
-                <div
-                    class="flex max-h-[409px] max-w-[238px] flex-col items-center justify-center rounded-[10px] border border-[#DDDDDD] p-4"
-                >
-                    <img
-                        src="src/assets/foto-carrossel.png"
-                        alt="Imagem do produto"
-                        class="product-img"
-                    />
-                    <h3 class="text-ms product-title mt-2 self-start">
-                        Lorem ipsum dolor sit amet consectetuer adipiscing elit
-                    </h3>
-                    <div class="mt-1 flex items-center gap-2 self-start">
-                        <div>
-                            <p
-                                class="product-original-price self-start text-xs text-[#303030] line-through"
-                            >
-                                R$100,00
-                            </p>
-                            <p
-                                class="product-price self-start text-base font-bold"
-                            >
-                                R$79,90
-                            </p>
-                        </div>
-                        <p
-                            class="product-discount m-auto rounded-[4px] bg-[#5EC0BE] px-2 py-1 text-xs text-white underline"
-                        >
-                            10%OFF
-                        </p>
-                    </div>
-                    <p class="mt-1 self-start text-[12px]">
-                        Ou em até
-                        <span class="product-installment font-bold"
-                            >10x de R$7,90</span
-                        >
-                    </p>
-                    <button
-                        class="mt-4 h-10 w-full rounded-[10px] bg-[#005CFF] px-6 py-2.5 font-bold text-white hover:bg-[#0026ff]"
-                    >
-                        Comprar
-                    </button>
-                </div>
-
-                <div
-                    class="flex max-h-[409px] max-w-[238px] flex-col items-center justify-center rounded-[10px] border border-[#DDDDDD] p-4"
-                >
-                    <img
-                        src="src/assets/foto-carrossel.png"
-                        alt="Imagem do produto"
-                        class="product-img"
-                    />
-                    <h3 class="text-ms product-title mt-2 self-start">
-                        Lorem ipsum dolor sit amet consectetuer adipiscing elit
-                    </h3>
-                    <div class="mt-1 flex items-center gap-2 self-start">
-                        <div>
-                            <p
-                                class="product-original-price self-start text-xs text-[#303030] line-through"
-                            >
-                                R$100,00
-                            </p>
-                            <p
-                                class="product-price self-start text-base font-bold"
-                            >
-                                R$79,90
-                            </p>
-                        </div>
-                        <p
-                            class="product-discount m-auto rounded-[4px] bg-[#5EC0BE] px-2 py-1 text-xs text-white underline"
-                        >
-                            10%OFF
-                        </p>
-                    </div>
-                    <p class="mt-1 self-start text-[12px]">
-                        Ou em até
-                        <span class="product-installment font-bold"
-                            >10x de R$7,90</span
-                        >
-                    </p>
-                    <button
-                        class="mt-4 h-10 w-full rounded-[10px] bg-[#005CFF] px-6 py-2.5 font-bold text-white hover:bg-[#0026ff]"
-                    >
-                        Comprar
-                    </button>
-                </div>
+                <!-- Paginação -->
+                <div class="swiper-pagination"></div>
             </div>
         </section>
 
