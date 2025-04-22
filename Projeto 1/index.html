@@ -12,7 +12,7 @@
         >
             <!-- Faixa azul -->
             <div
-                class="w-screen bg-[#005CFF] py-1.5 text-center text-sm font-bold text-white"
+                class="w-screen bg-[#005CFF] py-1.5 text-center text-xs font-bold text-white md:text-sm"
             >
                 <p class="px-4">
                     Ganhe
@@ -32,11 +32,10 @@
                 class="relative z-50 flex h-auto w-screen flex-col items-center justify-center gap-6 bg-white px-4 py-4 shadow-[0_0_8px_rgba(0,0,0,0.16)] sm:px-12 md:px-24 lg:px-40 2xl:px-82"
             >
                 <!-- Mobile -->
-                <div class="flex w-full flex-col items-center gap-6 xl:hidden">
+                <div class="flex w-full flex-col items-center gap-4 xl:hidden">
                     <!-- Div horizontal 1 -->
                     <div class="flex w-full justify-between">
-                        <!-- Container do megamenu -->
-                        <!-- Botão hamburguer -->
+                        <!-- Container do megamenu - menu hamburguer -->
                         <div class="relative" id="mobile-megamenu-containe">
                             <div
                                 class="group flex cursor-pointer flex-row items-center gap-2"
@@ -44,7 +43,7 @@
                             >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
-                                    class="h-7 w-6 group-hover:text-[#005CFF]"
+                                    class="h-6 w-6 group-hover:text-[#005CFF]"
                                     fill="none"
                                     viewBox="0 0 24 24"
                                     stroke-width="1.5"
@@ -103,11 +102,11 @@
                         <img
                             src="/src/assets/logo-avanti.png"
                             alt="Logo"
-                            class="h-7"
+                            class="h-6"
                         />
 
                         <!-- Carrinho -->
-                        <img src="/src/assets/carrinho.svg" class="h-7" />
+                        <img src="/src/assets/carrinho.svg" class="h-6" />
                     </div>
 
                     <!-- Div horizontal 2 -->
@@ -258,25 +257,23 @@
 
         <!-- Banner -->
         <section
-            class="flex h-80 w-screen items-center justify-center overflow-hidden bg-[#E7E7EA] lg:h-[510px] lg:flex-row"
+            class="flex h-70 w-screen overflow-hidden bg-[#E7E7EA] px-4 md:h-110 md:px-24 lg:h-[510px] lg:px-40 2xl:px-82"
         >
             <!-- Imagem -->
-            <div
-                class="relative h-1/2 w-full overflow-hidden lg:h-full lg:w-1/3"
-            >
+            <div class="relative w-1/2 overflow-hidden">
                 <img
                     src="/src/assets/cadeira.jpeg"
                     alt="Cadeira com roupas empilhadas"
-                    class="absolute h-full w-full object-cover object-center mix-blend-darken"
+                    class="h-full w-full object-cover object-center mix-blend-darken"
                 />
             </div>
 
             <!-- Texto -->
             <div
-                class="flex h-1/2 w-full flex-col items-center justify-center gap-4 px-4 text-center lg:h-full lg:w-1/3"
+                class="flex w-1/2 flex-col items-center justify-center gap-4 px-4 text-center"
             >
                 <h1
-                    class="flex flex-col text-4xl leading-tight sm:text-5xl md:text-6xl lg:flex-row lg:gap-x-2 lg:text-7xl 2xl:text-8xl"
+                    class="flex flex-col text-[40px] leading-10 sm:text-5xl md:text-6xl md:leading-14 lg:flex-row lg:gap-x-2 lg:text-7xl lg:leading-tight 2xl:text-8xl"
                 >
                     <span class="font-bold">SUPER</span>
                     <span class="font-light">SALE</span>
@@ -297,7 +294,7 @@
         <!-- Template do card -->
         <template id="product-card">
             <div
-                class="swiper-slide flex max-w-60 flex-col items-center justify-center rounded-[10px] border border-[#DDDDDD] p-4"
+                class="swiper-slide flex max-w-50 flex-col items-center justify-center rounded-[10px] border border-[#DDDDDD] p-4 lg:max-w-60"
             >
                 <div class="relative w-full">
                     <span
@@ -340,7 +337,7 @@
         <!-- Responsividade ok -->
         <!-- Carrosel -->
         <section
-            class="mt-25 flex flex-col gap-4 px-4 md:px-8 lg:px-16 2xl:px-82"
+            class="mt-20 flex flex-col gap-4 px-4 sm:px-12 md:px-24 lg:px-40 2xl:px-82"
         >
             <!-- Cabeçalho -->
             <div class="flex w-full justify-between">
@@ -523,7 +520,7 @@
         <!-- Responsividade ok -->
         <!-- Carrosel -->
         <section
-            class="mt-25 flex flex-col gap-4 px-4 md:px-8 lg:px-16 2xl:px-82"
+            class="mt-20 hidden gap-4 px-4 sm:px-12 md:flex md:flex-col md:px-24 lg:px-40 2xl:px-82"
         >
             <!-- Cabeçalho -->
             <div class="flex w-full justify-between">
@@ -727,31 +724,37 @@
                                 </svg>
                             </div>
                             <div
-                                class="dropdown-content max-h-0 overflow-hidden bg-gray-50 transition-all duration-300 ease-in-out"
+                                class="dropdown-content max-h-0 overflow-hidden bg-gray-50 pl-6 transition-all duration-300 ease-in-out"
                             >
                                 <ul class="px-4">
-                                    <li class="py-4 border-b-1 border-b-gray-300">
+                                    <li
+                                        class="border-b-1 border-b-gray-300 py-4"
+                                    >
                                         <a
                                             href="#"
                                             class="text-gray-700 hover:text-blue-600"
                                             >Sobre Nós</a
                                         >
                                     </li>
-                                    <li class="py-4 border-b-1 border-b-gray-300">
+                                    <li
+                                        class="border-b-1 border-b-gray-300 py-4"
+                                    >
                                         <a
                                             href="#"
                                             class="text-gray-700 hover:text-blue-600"
                                             >Nossas Lojas</a
                                         >
                                     </li>
-                                    <li class="py-4 border-b-1 border-b-gray-300">
+                                    <li
+                                        class="border-b-1 border-b-gray-300 py-4"
+                                    >
                                         <a
                                             href="#"
                                             class="text-gray-700 hover:text-blue-600"
                                             >Privacidade e Segurança</a
                                         >
                                     </li>
-                                    <li class="py-4 ">
+                                    <li class="py-4">
                                         <a
                                             href="#"
                                             class="text-gray-700 hover:text-blue-600"
@@ -786,31 +789,39 @@
                                 </svg>
                             </div>
                             <div
-                                class="dropdown-content max-h-0 overflow-hidden bg-gray-50 transition-all duration-300 ease-in-out"
+                                class="dropdown-content max-h-0 overflow-hidden bg-gray-50 pl-6 transition-all duration-300 ease-in-out"
                             >
                                 <ul class="px-4">
-                                    <li class="py-4 border-b-1 border-b-gray-300">
+                                    <li
+                                        class="border-b-1 border-b-gray-300 py-4"
+                                    >
                                         <a
                                             href="#"
                                             class="text-gray-700 hover:text-blue-600"
                                             >Fale Conosco</a
                                         >
                                     </li>
-                                    <li class="py-4 border-b-1 border-b-gray-300">
+                                    <li
+                                        class="border-b-1 border-b-gray-300 py-4"
+                                    >
                                         <a
                                             href="#"
                                             class="text-gray-700 hover:text-blue-600"
                                             >Frete e Entrega</a
                                         >
                                     </li>
-                                    <li class="py-4 border-b-1 border-b-gray-300">
+                                    <li
+                                        class="border-b-1 border-b-gray-300 py-4"
+                                    >
                                         <a
                                             href="#"
                                             class="text-gray-700 hover:text-blue-600"
                                             >Trocas e Devoluções</a
                                         >
                                     </li>
-                                    <li class="py-4 border-b-1 border-b-gray-300">
+                                    <li
+                                        class="border-b-1 border-b-gray-300 py-4"
+                                    >
                                         <a
                                             href="#"
                                             class="text-gray-700 hover:text-blue-600"
@@ -852,16 +863,20 @@
                                 </svg>
                             </div>
                             <div
-                                class="dropdown-content max-h-0 overflow-hidden bg-gray-50 transition-all duration-300 ease-in-out"
+                                class="dropdown-content max-h-0 overflow-hidden bg-gray-50 pl-6 transition-all duration-300 ease-in-out"
                             >
                                 <div class="px-4">
-                                    <h5 class="py-4 border-b-1 border-b-gray-300">
+                                    <h5
+                                        class="border-b-1 border-b-gray-300 py-4"
+                                    >
                                         <span class="font-bold text-[#303030]"
                                             >Telefone:
                                         </span>
                                         (00) 1234-5678
                                     </h5>
-                                    <h5 class="py-4 border-b-1 border-b-gray-300">
+                                    <h5
+                                        class="border-b-1 border-b-gray-300 py-4"
+                                    >
                                         <span class="font-bold text-[#303030]"
                                             >E-mail:
                                         </span>
@@ -882,7 +897,7 @@
 
                 <!-- Horizontal 2 - Ícones  -->
                 <div
-                    class="flex flex-wrap items-center justify-center gap-10 px-4 sm:px-12 md:px-24 lg:px-40 2xl:px-82"
+                    class="flex w-full flex-wrap items-center justify-center gap-10 px-4"
                 >
                     <a href="#"
                         ><img

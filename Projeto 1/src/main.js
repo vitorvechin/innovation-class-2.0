@@ -202,6 +202,10 @@ const categories = [
 document.addEventListener('DOMContentLoaded', function () {
     console.log('DOM fully loaded and parsed')
 
+    // -------------------- DROPDOWN MENU ----------------
+
+    // -------------------- CARROSSEL --------------------
+
     // Pega o template do card
     const template = document.getElementById('product-card')
 
@@ -257,6 +261,8 @@ document.addEventListener('DOMContentLoaded', function () {
             spaceBetween: 16,
         })
     })
+
+    // -------------------- DROPDOWN FOOTER -----------------
 
     // Seleciona todos os cabeçalhos de dropdown
     const dropdownHeaders = document.querySelectorAll('.dropdown-header')
