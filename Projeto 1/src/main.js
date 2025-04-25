@@ -136,7 +136,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const mobileSubcategoriesWrapper = document.getElementById('mobile-subcategories-wrapper');
     const mobileMegaMenuContainer = document.getElementById('mobile-megamenu-container');
 
-    // Variável para armazenar o departamento ativo
     let activeDesktopDepartment = null;
     let activeMobileDepartment = null;
 
@@ -149,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function () {
             li.className = 'py-2 px-3 cursor-pointer hover:bg-blue-50 hover:text-[#005CFF] rounded-md transition-colors';
             li.setAttribute('data-index', index);
             li.textContent = item.departamento;
-            
+
             li.addEventListener('click', (e) => {
                 // Remove active class from all items
                 desktopCategoriesList.querySelectorAll('li').forEach(item => {
@@ -314,7 +313,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Inicialização
     populateDepartments();
-
 
     // -------------------- CARROSSEL --------------------
 
