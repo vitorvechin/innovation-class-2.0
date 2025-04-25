@@ -314,6 +314,45 @@ document.addEventListener('DOMContentLoaded', function () {
     // Inicialização
     populateDepartments();
 
+    // -------------------- BUSCA --------------------
+
+    function handleSearch(inputId) {
+        const searchInput = document.getElementById(inputId);
+        const searchTerm = searchInput.value.trim();
+        const searchResult = document.getElementById('search-result');
+
+        if (searchTerm) {
+            searchResult.textContent = `Você buscou por: '${searchTerm}'`;
+            searchResult.classList.remove('hidden'); // Mostra o resultado
+        } else {
+            searchResult.textContent = 'Por favor, digite algo para buscar';
+            searchResult.classList.remove('hidden'); // Mostra a mensagem de erro
+        }
+    }
+
+    document.getElementById('search-button-mobile').addEventListener('click', () => handleSearch('search-input-mobile'));
+    document.getElementById('search-button-desktop').addEventListener('click', () => handleSearch('search-input-desktop'));
+
+    document.getElementById('search-input-mobile').addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') handleSearch('search-input-mobile');
+    });
+    document.getElementById('search-input-desktop').addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') handleSearch('search-input-desktop');
+    });
+
+    // Fecha o resultado se houver clique no site
+    document.addEventListener('click', function (event) {
+        const searchResult = document.getElementById('search-result');
+        const isSearchBar = event.target.closest('#search-input-mobile, #search-input-desktop, #search-button-mobile, #search-button-desktop');
+
+        if (!isSearchBar && !searchResult.classList.contains('hidden')) {
+            searchResult.classList.add('hidden');
+        }
+    });
+
+    document.getElementById('search-result').addEventListener('click', function (event) {
+        event.stopPropagation();
+    });
     // -------------------- CARROSSEL --------------------
 
     // Pega o template do card

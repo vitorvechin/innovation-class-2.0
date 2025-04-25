@@ -64,30 +64,34 @@
 
                 <!-- Div horizontal 2 -->
                 <div class="flex w-full">
-                    <!-- Searchbar -->
-                    <div class="flex h-10 w-full items-center rounded-[10px] border border-[#DDDDDD] px-6">
-                        <input
-                            class="w-full placeholder:text-sm placeholder:font-semibold placeholder:text-black focus:outline-none"
-                            type="text" placeholder="Digite aqui o que você procura" />
-                        <img src="/src/assets/lupa.svg" alt="Buscar" />
+                    <!-- Searchbar Mobile -->
+                    <div class="flex w-full">
+                        <div class="flex h-10 w-full items-center rounded-[10px] border border-[#DDDDDD] px-6">
+                            <input id="search-input-mobile"
+                                class="w-full placeholder:text-sm placeholder:font-semibold placeholder:text-black focus:outline-none"
+                                type="text" placeholder="Digite aqui o que você procura" />
+                            <img id="search-button-mobile" src="/src/assets/lupa.svg" alt="Buscar"
+                                class="cursor-pointer" />
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Desktop (oculto no mobile) -->
+            <!-- Desktop  -->
             <div class="hidden w-full items-center gap-6 xl:flex xl:flex-col">
                 <!-- Div horizontal 1 -->
                 <div class="flex w-full items-center justify-between">
                     <!-- Logo -->
                     <img src="/src/assets/logo-avanti.png" alt="Logo" class="h-7" />
 
-                    <!-- Searchbar -->
+                    <!-- Searchbar Desktop (modificada) -->
                     <div
                         class="flex h-10 w-full items-center justify-center rounded-[10px] border border-[#DDDDDD] px-4 sm:px-6 xl:max-w-[594px]">
-                        <input
+                        <input id="search-input-desktop"
                             class="w-full placeholder:text-sm placeholder:font-semibold placeholder:text-black focus:outline-none"
                             type="text" placeholder="Digite aqui o que você procura" />
-                        <img src="/src/assets/lupa.svg" alt="Buscar" />
+                        <img id="search-button-desktop" src="/src/assets/lupa.svg" alt="Buscar"
+                            class="cursor-pointer" />
                     </div>
 
                     <!-- Avatar + Nome + Carrinho -->
@@ -173,6 +177,8 @@
             </div>
         </div>
     </header>
+    <!-- Adicione esta div abaixo do header para mostrar o resultado da busca -->
+    <div id="search-result" class="hidden w-full px-4 py-2 text-center sm:px-12 md:px-24 lg:px-40 2xl:px-82"></div>
 
     <!-- Banner -->
     <section
