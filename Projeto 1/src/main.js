@@ -60,149 +60,261 @@ const products = [
 ]
 
 // Departamentos e categorias
-const categories = [
+const menuData = [
     {
-        name: 'Departamento',
-        subcategories: [
-            {
-                name: 'Categoria',
-                items: ['Categoria', 'Categoria', 'Categoria'],
-            },
-            {
-                name: 'Categoria',
-                items: ['Categoria', 'Categoria', 'Categoria'],
-            },
-            {
-                name: 'Categoria',
-                items: ['Categoria', 'Categoria', 'Categoria'],
-            },
-        ],
+        departamento: "Informática",
+        categorias: [
+            { nome: "Notebooks", subcategorias: ["Gaming", "Ultrabooks", "Conversíveis"] },
+            { nome: "Computadores", subcategorias: ["All-in-One", "Desktop", "Mini PC"] },
+            { nome: "Periféricos", subcategorias: ["Mouse", "Teclado", "Headsets"] },
+            { nome: "Monitores", subcategorias: ["Ultrawide", "Gamer", "Office"] },
+            { nome: "Acessórios", subcategorias: ["Cabos", "Adaptadores", "Suportes"] }
+        ]
     },
     {
-        name: 'Departamento',
-        subcategories: [
-            {
-                name: 'Categoria',
-                items: ['Categoria', 'Categoria', 'Categoria'],
-            },
-            {
-                name: 'Categoria',
-                items: ['Categoria', 'Categoria', 'Categoria'],
-            },
-            {
-                name: 'Categoria',
-                items: ['Categoria', 'Categoria', 'Categoria'],
-            },
-        ],
+        departamento: "Smartphone",
+        categorias: [
+            { nome: "Apple", subcategorias: ["iPhone 15", "iPhone 14", "iPhone SE"] },
+            { nome: "Samsung", subcategorias: ["Galaxy S", "Galaxy A", "Galaxy Z"] },
+            { nome: "Xiaomi", subcategorias: ["Redmi", "Poco", "Mi"] },
+            { nome: "Motorola", subcategorias: ["Edge", "Moto G", "Razr"] }
+        ]
     },
     {
-        name: 'Departamento',
-        subcategories: [
-            {
-                name: 'Categoria',
-                items: ['Categoria', 'Categoria', 'Categoria'],
-            },
-            {
-                name: 'Categoria',
-                items: ['Categoria', 'Categoria', 'Categoria'],
-            },
-            {
-                name: 'Categoria',
-                items: ['Categoria', 'Categoria', 'Categoria'],
-            },
-        ],
+        departamento: "Eletrodomésticos",
+        categorias: [
+            { nome: "Linha Branca", subcategorias: ["Geladeiras", "Fogões", "Lavadoras"] },
+            { nome: "Ar e Ventilação", subcategorias: ["Ar Condicionado", "Ventiladores", "Aquecedores"] },
+            { nome: "Eletroportáteis", subcategorias: ["Liquidificadores", "Cafeteiras", "Air Fryers"] }
+        ]
     },
     {
-        name: 'Departamento',
-        subcategories: [
-            {
-                name: 'Categoria',
-                items: ['Categoria', 'Categoria', 'Categoria'],
-            },
-            {
-                name: 'Categoria',
-                items: ['Categoria', 'Categoria', 'Categoria'],
-            },
-            {
-                name: 'Categoria',
-                items: ['Categoria', 'Categoria', 'Categoria'],
-            },
-        ],
+        departamento: "Moda",
+        categorias: [
+            { nome: "Masculina", subcategorias: ["Camisetas", "Calças", "Calçados"] },
+            { nome: "Feminina", subcategorias: ["Blusas", "Vestidos", "Calçados"] },
+            { nome: "Infantil", subcategorias: ["Meninos", "Meninas", "Bebês"] },
+            { nome: "Acessórios", subcategorias: ["Bolsas", "Bonés", "Relógios"] }
+        ]
     },
     {
-        name: 'Departamento',
-        subcategories: [
-            {
-                name: 'Categoria',
-                items: ['Categoria', 'Categoria', 'Categoria'],
-            },
-            {
-                name: 'Categoria',
-                items: ['Categoria', 'Categoria', 'Categoria'],
-            },
-            {
-                name: 'Categoria',
-                items: ['Categoria', 'Categoria', 'Categoria'],
-            },
-        ],
+        departamento: "Casa e Decoração",
+        categorias: [
+            { nome: "Cozinha", subcategorias: ["Panelas", "Louças", "Utensílios"] },
+            { nome: "Quarto", subcategorias: ["Roupa de Cama", "Travesseiros", "Organizadores"] },
+            { nome: "Sala", subcategorias: ["Almofadas", "Cortinas", "Tapetes"] },
+            { nome: "Banheiro", subcategorias: ["Toalhas", "Acessórios", "Organização"] }
+        ]
     },
     {
-        name: 'Departamento',
-        subcategories: [
-            {
-                name: 'Categoria',
-                items: ['Categoria', 'Categoria', 'Categoria'],
-            },
-            {
-                name: 'Categoria',
-                items: ['Categoria', 'Categoria', 'Categoria'],
-            },
-            {
-                name: 'Categoria',
-                items: ['Categoria', 'Categoria', 'Categoria'],
-            },
-        ],
-    },
-    {
-        name: 'Departamento',
-        subcategories: [
-            {
-                name: 'Categoria',
-                items: ['Categoria', 'Categoria', 'Categoria'],
-            },
-            {
-                name: 'Categoria',
-                items: ['Categoria', 'Categoria', 'Categoria'],
-            },
-            {
-                name: 'Categoria',
-                items: ['Categoria', 'Categoria', 'Categoria'],
-            },
-        ],
-    },
-    {
-        name: 'Departamento',
-        subcategories: [
-            {
-                name: 'Categoria',
-                items: ['Categoria', 'Categoria', 'Categoria'],
-            },
-            {
-                name: 'Categoria',
-                items: ['Categoria', 'Categoria', 'Categoria'],
-            },
-            {
-                name: 'Categoria',
-                items: ['Categoria', 'Categoria', 'Categoria'],
-            },
-        ],
-    },
+        departamento: "Esportes",
+        categorias: [
+            { nome: "Fitness", subcategorias: ["Roupas", "Acessórios", "Equipamentos"] },
+            { nome: "Futebol", subcategorias: ["Chuteiras", "Bolas", "Uniformes"] },
+            { nome: "Natação", subcategorias: ["Óculos", "Touca", "Maiôs"] },
+            { nome: "Ciclismo", subcategorias: ["Bicicletas", "Capacetes", "Acessórios"] }
+        ]
+    }
 ]
 
 document.addEventListener('DOMContentLoaded', function () {
     console.log('DOM fully loaded and parsed')
 
     // -------------------- DROPDOWN MENU ----------------
+    // Elementos DOM - Desktop
+    const desktopMenuTrigger = document.getElementById('desktop-menu-trigger');
+    const desktopMegaMenu = document.getElementById('desktop-megamenu');
+    const desktopCategoriesList = document.getElementById('desktop-categories-list');
+    const desktopSubcategoriesContainer = document.getElementById('desktop-subcategories-container');
+    const desktopMegaMenuContainer = document.getElementById('desktop-megamenu-container');
+
+    // Elementos DOM - Mobile
+    const mobileMenuTrigger = document.getElementById('mobile-menu-trigger');
+    const mobileMegaMenu = document.getElementById('mobile-megamenu');
+    const mobileCategoriesList = document.getElementById('mobile-categories-list');
+    const mobileSubcategoriesContainer = document.getElementById('mobile-subcategories-container');
+    const mobileSubcategoriesWrapper = document.getElementById('mobile-subcategories-wrapper');
+    const mobileMegaMenuContainer = document.getElementById('mobile-megamenu-container');
+
+    // Variável para armazenar o departamento ativo
+    let activeDesktopDepartment = null;
+    let activeMobileDepartment = null;
+
+    // Popula as listas de departamentos
+    function populateDepartments() {
+        // Desktop
+        desktopCategoriesList.innerHTML = '';
+        menuData.forEach((item, index) => {
+            const li = document.createElement('li');
+            li.className = 'py-2 px-3 cursor-pointer hover:bg-blue-50 hover:text-[#005CFF] rounded-md transition-colors';
+            li.setAttribute('data-index', index);
+            li.textContent = item.departamento;
+            
+            li.addEventListener('click', (e) => {
+                // Remove active class from all items
+                desktopCategoriesList.querySelectorAll('li').forEach(item => {
+                    item.classList.remove('bg-blue-100', 'text-[#005CFF]', 'font-semibold');
+                });
+
+                // Add active class to clicked item
+                li.classList.add('bg-blue-100', 'text-[#005CFF]', 'font-semibold');
+
+                // Show subcategories for this department
+                const departmentIndex = parseInt(li.getAttribute('data-index'));
+                activeDesktopDepartment = departmentIndex;
+                showDesktopSubcategories(departmentIndex);
+
+                e.stopPropagation();
+            });
+            desktopCategoriesList.appendChild(li);
+        });
+
+        // Mobile
+        mobileCategoriesList.innerHTML = '';
+        menuData.forEach((item, index) => {
+            const li = document.createElement('li');
+            li.className = 'py-2 px-3 cursor-pointer hover:bg-blue-50 hover:text-[#005CFF] rounded-md transition-colors';
+            li.setAttribute('data-index', index);
+            li.textContent = item.departamento;
+            li.addEventListener('click', (e) => {
+                // Remove active class from all items
+                mobileCategoriesList.querySelectorAll('li').forEach(item => {
+                    item.classList.remove('bg-blue-100', 'text-[#005CFF]', 'font-semibold');
+                });
+
+                // Add active class to clicked item
+                li.classList.add('bg-blue-100', 'text-[#005CFF]', 'font-semibold');
+
+                // Show subcategories for this department
+                const departmentIndex = parseInt(li.getAttribute('data-index'));
+                activeMobileDepartment = departmentIndex;
+                showMobileSubcategories(departmentIndex);
+
+                e.stopPropagation();
+            });
+            mobileCategoriesList.appendChild(li);
+        });
+    }
+
+    // Exibe subcategorias no desktop
+    function showDesktopSubcategories(departmentIndex) {
+        const department = menuData[departmentIndex];
+        desktopSubcategoriesContainer.innerHTML = '';
+
+        department.categorias.forEach(categoria => {
+            const categoriaDiv = document.createElement('div');
+            categoriaDiv.className = 'flex flex-col gap-2';
+
+            const categoryTitle = document.createElement('h3');
+            categoryTitle.className = 'font-bold text-[#005CFF] mb-2';
+            categoryTitle.textContent = categoria.nome;
+            categoriaDiv.appendChild(categoryTitle);
+
+            const subcategoriesList = document.createElement('ul');
+            subcategoriesList.className = 'flex flex-col gap-1';
+
+            categoria.subcategorias.forEach(subcategoria => {
+                const subcategoriaItem = document.createElement('li');
+                subcategoriaItem.className = 'text-sm hover:text-[#005CFF] cursor-pointer';
+                subcategoriaItem.textContent = subcategoria;
+                subcategoriesList.appendChild(subcategoriaItem);
+            });
+
+            categoriaDiv.appendChild(subcategoriesList);
+            desktopSubcategoriesContainer.appendChild(categoriaDiv);
+        });
+    }
+
+    // Exibe subcategorias no mobile
+    function showMobileSubcategories(departmentIndex) {
+        const department = menuData[departmentIndex];
+        mobileSubcategoriesContainer.innerHTML = '';
+
+        // Botão de voltar
+        const backButton = document.createElement('button');
+        backButton.className = 'flex items-center gap-2 text-sm font-semibold text-gray-600 mb-4';
+        backButton.innerHTML = `
+             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+             </svg>
+             Voltar para Departamentos
+         `;
+        backButton.addEventListener('click', () => {
+            mobileSubcategoriesWrapper.classList.add('hidden');
+            mobileCategoriesList.parentElement.classList.remove('hidden');
+        });
+        mobileSubcategoriesContainer.appendChild(backButton);
+
+        department.categorias.forEach(categoria => {
+            const categoriaDiv = document.createElement('div');
+            categoriaDiv.className = 'flex flex-col gap-2 mb-6';
+
+            const categoryTitle = document.createElement('h3');
+            categoryTitle.className = 'font-bold text-[#005CFF] mb-2';
+            categoryTitle.textContent = categoria.nome;
+            categoriaDiv.appendChild(categoryTitle);
+
+            const subcategoriesList = document.createElement('ul');
+            subcategoriesList.className = 'flex flex-col gap-1';
+
+            categoria.subcategorias.forEach(subcategoria => {
+                const subcategoriaItem = document.createElement('li');
+                subcategoriaItem.className = 'text-sm hover:text-[#005CFF] cursor-pointer';
+                subcategoriaItem.textContent = subcategoria;
+                subcategoriesList.appendChild(subcategoriaItem);
+            });
+
+            categoriaDiv.appendChild(subcategoriesList);
+            mobileSubcategoriesContainer.appendChild(categoriaDiv);
+        });
+
+        mobileCategoriesList.parentElement.classList.add('hidden');
+        mobileSubcategoriesWrapper.classList.remove('hidden');
+    }
+
+    // Event listener para o menu trigger - Desktop
+    desktopMenuTrigger.addEventListener('click', function (e) {
+        desktopMegaMenu.classList.toggle('hidden');
+
+        // Por padrão o primeiro departamento está selecionado
+        if (!activeDesktopDepartment && desktopCategoriesList.children.length > 0) {
+            const firstDepartment = desktopCategoriesList.children[0];
+            firstDepartment.classList.add('bg-blue-100', 'text-[#005CFF]', 'font-semibold');
+            activeDesktopDepartment = 0;
+            showDesktopSubcategories(0);
+        }
+
+        e.stopPropagation();
+    });
+
+    // Event listener para o menu trigger - Mobile
+    mobileMenuTrigger.addEventListener('click', function (e) {
+        mobileMegaMenu.classList.toggle('hidden');
+
+        // Reset mobile view to show departments when opening
+        mobileSubcategoriesWrapper.classList.add('hidden');
+        mobileCategoriesList.parentElement.classList.remove('hidden');
+
+        e.stopPropagation();
+    });
+
+    // Fechar o menu ao clicar fora - Desktop
+    document.addEventListener('click', function (e) {
+        if (desktopMegaMenu && !desktopMegaMenuContainer.contains(e.target)) {
+            desktopMegaMenu.classList.add('hidden');
+        }
+    });
+
+    // Fechar o menu ao clicar fora - Mobile
+    document.addEventListener('click', function (e) {
+        if (mobileMegaMenu && !mobileMegaMenuContainer.contains(e.target)) {
+            mobileMegaMenu.classList.add('hidden');
+        }
+    });
+
+    // Inicialização
+    populateDepartments();
+
 
     // -------------------- CARROSSEL --------------------
 
